@@ -46,7 +46,7 @@ namespace HCI_FINAL
             od.Title = "Izaberite ikonicu";
             od.Multiselect = false;
 
-            if (od.ShowDialog() == DialogResult.OK) ;
+            if (od.ShowDialog() == DialogResult.OK) 
                 img = Image.FromFile(od.FileName);
         }
 
