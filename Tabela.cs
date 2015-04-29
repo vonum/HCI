@@ -9,11 +9,31 @@ using System.Windows.Forms;
 
 namespace HCI_FINAL
 {
-    public partial class Tabela : Form
+    partial class Tabela : Form
     {
-        public Tabela()
+        public List<Rsc> resursi;
+
+        public Tabela(List<Rsc> resursi)
         {
             InitializeComponent();
+            this.resursi = resursi;
         }
+
+        private void Tabela_Load(object sender, EventArgs e)
+        {
+            foreach (Rsc resurs in resursi)
+            {
+                table.Rows.Add(resurs.toString());
+            }
+        }
+
+        protected override void OnLoad(EventArgs e)
+        {
+            foreach (Rsc resurs in resursi)
+            {
+                //table.Rows.Add(resurs.toString());
+            }
+        }
+
     }
 }

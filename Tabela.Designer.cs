@@ -28,15 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.naziv_c = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.oznaka_c = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.obn_c = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.sv_c = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.jm_c = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.cena_c = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.izmeni_c = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.obrisi_c = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.table = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
             this.dpodaci_gb = new System.Windows.Forms.GroupBox();
@@ -70,18 +62,28 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.naziv_c = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oznaka_c = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.obn_c = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sv_c = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jm_c = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cena_c = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.izmeni_c = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.obrisi_c = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.label15 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.table)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.dpodaci_gb.SuspendLayout();
             this.opodaci_gb.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // table
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.LightPink;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.table.BackgroundColor = System.Drawing.Color.LightPink;
+            this.table.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.table.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.naziv_c,
             this.oznaka_c,
             this.obn_c,
@@ -90,63 +92,11 @@
             this.cena_c,
             this.izmeni_c,
             this.obrisi_c});
-            this.dataGridView1.GridColor = System.Drawing.Color.White;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(843, 278);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // naziv_c
-            // 
-            this.naziv_c.HeaderText = "Naziv";
-            this.naziv_c.Name = "naziv_c";
-            // 
-            // oznaka_c
-            // 
-            this.oznaka_c.HeaderText = "Oznaka";
-            this.oznaka_c.Name = "oznaka_c";
-            // 
-            // obn_c
-            // 
-            this.obn_c.HeaderText = "Obnovljivost";
-            this.obn_c.Items.AddRange(new object[] {
-            "Obnovljiv\t",
-            "Neobnovljiv"});
-            this.obn_c.Name = "obn_c";
-            this.obn_c.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // sv_c
-            // 
-            this.sv_c.HeaderText = "Prioritet";
-            this.sv_c.Items.AddRange(new object[] {
-            "Bitan\t",
-            "Nebitan"});
-            this.sv_c.Name = "sv_c";
-            // 
-            // jm_c
-            // 
-            this.jm_c.HeaderText = "Mera";
-            this.jm_c.Items.AddRange(new object[] {
-            "merica",
-            "barel",
-            "tona",
-            "kilogram"});
-            this.jm_c.Name = "jm_c";
-            // 
-            // cena_c
-            // 
-            this.cena_c.HeaderText = "Cena";
-            this.cena_c.Name = "cena_c";
-            // 
-            // izmeni_c
-            // 
-            this.izmeni_c.HeaderText = "Izmeni";
-            this.izmeni_c.Name = "izmeni_c";
-            // 
-            // obrisi_c
-            // 
-            this.obrisi_c.HeaderText = "Obrisi";
-            this.obrisi_c.Name = "obrisi_c";
+            this.table.GridColor = System.Drawing.Color.White;
+            this.table.Location = new System.Drawing.Point(12, 12);
+            this.table.Name = "table";
+            this.table.Size = new System.Drawing.Size(843, 278);
+            this.table.TabIndex = 0;
             // 
             // groupBox1
             // 
@@ -329,6 +279,8 @@
             // 
             // opodaci_gb
             // 
+            this.opodaci_gb.Controls.Add(this.button3);
+            this.opodaci_gb.Controls.Add(this.label15);
             this.opodaci_gb.Controls.Add(this.comboBox7);
             this.opodaci_gb.Controls.Add(this.textBox3);
             this.opodaci_gb.Controls.Add(this.textBox2);
@@ -404,7 +356,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(20, 138);
+            this.label5.Location = new System.Drawing.Point(20, 162);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(45, 13);
             this.label5.TabIndex = 4;
@@ -503,6 +455,72 @@
             this.textBox6.Size = new System.Drawing.Size(100, 20);
             this.textBox6.TabIndex = 6;
             // 
+            // naziv_c
+            // 
+            this.naziv_c.HeaderText = "Naziv";
+            this.naziv_c.Name = "naziv_c";
+            // 
+            // oznaka_c
+            // 
+            this.oznaka_c.HeaderText = "Oznaka";
+            this.oznaka_c.Name = "oznaka_c";
+            // 
+            // obn_c
+            // 
+            this.obn_c.HeaderText = "Tip";
+            this.obn_c.Name = "obn_c";
+            this.obn_c.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.obn_c.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // sv_c
+            // 
+            this.sv_c.HeaderText = "Frekvencija";
+            this.sv_c.Name = "sv_c";
+            this.sv_c.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.sv_c.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // jm_c
+            // 
+            this.jm_c.HeaderText = "Obnovljivost";
+            this.jm_c.Name = "jm_c";
+            this.jm_c.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.jm_c.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // cena_c
+            // 
+            this.cena_c.HeaderText = "Cena";
+            this.cena_c.Name = "cena_c";
+            // 
+            // izmeni_c
+            // 
+            this.izmeni_c.HeaderText = "Izmeni";
+            this.izmeni_c.Name = "izmeni_c";
+            // 
+            // obrisi_c
+            // 
+            this.obrisi_c.HeaderText = "Obrisi";
+            this.obrisi_c.Name = "obrisi_c";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(20, 140);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(43, 13);
+            this.label15.TabIndex = 11;
+            this.label15.Text = "Etikete:";
+            // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(133, 162);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 12;
+            this.button3.Text = "Izaberi";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
             // Tabela
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -511,12 +529,12 @@
             this.ClientSize = new System.Drawing.Size(916, 635);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.table);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Black;
             this.Name = "Tabela";
             this.Text = "Resursi";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.table)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.dpodaci_gb.ResumeLayout(false);
             this.dpodaci_gb.PerformLayout();
@@ -530,15 +548,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn naziv_c;
-        private System.Windows.Forms.DataGridViewTextBoxColumn oznaka_c;
-        private System.Windows.Forms.DataGridViewComboBoxColumn obn_c;
-        private System.Windows.Forms.DataGridViewComboBoxColumn sv_c;
-        private System.Windows.Forms.DataGridViewComboBoxColumn jm_c;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cena_c;
-        private System.Windows.Forms.DataGridViewButtonColumn izmeni_c;
-        private System.Windows.Forms.DataGridViewButtonColumn obrisi_c;
+        private System.Windows.Forms.DataGridView table;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.GroupBox dpodaci_gb;
@@ -572,5 +582,15 @@
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn naziv_c;
+        private System.Windows.Forms.DataGridViewTextBoxColumn oznaka_c;
+        private System.Windows.Forms.DataGridViewTextBoxColumn obn_c;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sv_c;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jm_c;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cena_c;
+        private System.Windows.Forms.DataGridViewButtonColumn izmeni_c;
+        private System.Windows.Forms.DataGridViewButtonColumn obrisi_c;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label15;
     }
 }

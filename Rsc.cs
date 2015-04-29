@@ -30,6 +30,24 @@ namespace HCI_FINAL
             etikete = new List<Et>();
         }
 
+        public Object[] toString()
+        {
+            String _naziv = naziv;
+            String _oznaka = oznaka;
+            String _tip = tip.naziv;
+            String _frekv;
+            if (frekv == Frekvencija.CEST)
+                _frekv = "Cest";
+            else
+                if (frekv == Frekvencija.REDAK)
+                    _frekv = "Redak";
+                else
+                    _frekv = "Univerzalan";
+            String _obnovljiv = (obnovljiv) ? "Obnovljiv" : "Neobnovljiv";
+            String _cena = cena.ToString();
+
+            return new String[] { _naziv, _oznaka, _tip, _frekv, _obnovljiv, _cena, "Izmeni", "Dodaj" };
+        }
 
     }
 }
