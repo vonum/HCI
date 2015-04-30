@@ -29,14 +29,6 @@
         private void InitializeComponent()
         {
             this.table = new System.Windows.Forms.DataGridView();
-            this.naziv_c = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.oznaka_c = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.obn_c = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sv_c = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jm_c = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cena_c = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.izmeni_c = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.obrisi_c = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
             this.dpodaci_gb = new System.Windows.Forms.GroupBox();
@@ -73,6 +65,14 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.naziv_c = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oznaka_c = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.obn_c = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sv_c = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jm_c = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cena_c = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.izmeni_c = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.obrisi_c = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.table)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.dpodaci_gb.SuspendLayout();
@@ -99,52 +99,6 @@
             this.table.Size = new System.Drawing.Size(843, 278);
             this.table.TabIndex = 0;
             this.table.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_CellContentClick);
-            // 
-            // naziv_c
-            // 
-            this.naziv_c.HeaderText = "Naziv";
-            this.naziv_c.Name = "naziv_c";
-            // 
-            // oznaka_c
-            // 
-            this.oznaka_c.HeaderText = "Oznaka";
-            this.oznaka_c.Name = "oznaka_c";
-            // 
-            // obn_c
-            // 
-            this.obn_c.HeaderText = "Tip";
-            this.obn_c.Name = "obn_c";
-            this.obn_c.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.obn_c.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // sv_c
-            // 
-            this.sv_c.HeaderText = "Frekvencija";
-            this.sv_c.Name = "sv_c";
-            this.sv_c.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.sv_c.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // jm_c
-            // 
-            this.jm_c.HeaderText = "Obnovljivost";
-            this.jm_c.Name = "jm_c";
-            this.jm_c.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.jm_c.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // cena_c
-            // 
-            this.cena_c.HeaderText = "Cena";
-            this.cena_c.Name = "cena_c";
-            // 
-            // izmeni_c
-            // 
-            this.izmeni_c.HeaderText = "Izmeni";
-            this.izmeni_c.Name = "izmeni_c";
-            // 
-            // obrisi_c
-            // 
-            this.obrisi_c.HeaderText = "Obrisi";
-            this.obrisi_c.Name = "obrisi_c";
             // 
             // groupBox1
             // 
@@ -535,6 +489,60 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // naziv_c
+            // 
+            this.naziv_c.HeaderText = "Naziv";
+            this.naziv_c.Name = "naziv_c";
+            this.naziv_c.ReadOnly = true;
+            // 
+            // oznaka_c
+            // 
+            this.oznaka_c.HeaderText = "Oznaka";
+            this.oznaka_c.Name = "oznaka_c";
+            this.oznaka_c.ReadOnly = true;
+            // 
+            // obn_c
+            // 
+            this.obn_c.HeaderText = "Tip";
+            this.obn_c.Name = "obn_c";
+            this.obn_c.ReadOnly = true;
+            this.obn_c.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.obn_c.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // sv_c
+            // 
+            this.sv_c.HeaderText = "Frekvencija";
+            this.sv_c.Name = "sv_c";
+            this.sv_c.ReadOnly = true;
+            this.sv_c.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.sv_c.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // jm_c
+            // 
+            this.jm_c.HeaderText = "Obnovljivost";
+            this.jm_c.Name = "jm_c";
+            this.jm_c.ReadOnly = true;
+            this.jm_c.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.jm_c.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // cena_c
+            // 
+            this.cena_c.HeaderText = "Cena";
+            this.cena_c.Name = "cena_c";
+            this.cena_c.ReadOnly = true;
+            // 
+            // izmeni_c
+            // 
+            this.izmeni_c.HeaderText = "Izmeni";
+            this.izmeni_c.Name = "izmeni_c";
+            this.izmeni_c.ReadOnly = true;
+            // 
+            // obrisi_c
+            // 
+            this.obrisi_c.HeaderText = "Obrisi";
+            this.obrisi_c.Name = "obrisi_c";
+            this.obrisi_c.ReadOnly = true;
+            // 
             // Tabela
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -596,6 +604,9 @@
         private System.Windows.Forms.TextBox cena_pretraga;
         private System.Windows.Forms.TextBox naziv_pretraga;
         private System.Windows.Forms.TextBox tip_pretraga;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.DataGridViewTextBoxColumn naziv_c;
         private System.Windows.Forms.DataGridViewTextBoxColumn oznaka_c;
         private System.Windows.Forms.DataGridViewTextBoxColumn obn_c;
@@ -604,8 +615,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cena_c;
         private System.Windows.Forms.DataGridViewButtonColumn izmeni_c;
         private System.Windows.Forms.DataGridViewButtonColumn obrisi_c;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Button button4;
     }
 }
