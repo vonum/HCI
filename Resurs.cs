@@ -57,7 +57,7 @@ namespace HCI_FINAL
 
         private void button2_Click(object sender, EventArgs e)                  //dodavanje resursa***************/
         {
-            Rsc resurs = new Rsc();
+            Rsc resurs = new Rsc(); 
 
             resurs.opis = opis_tb.Text;
             resurs.naziv = naziv_tb.Text;

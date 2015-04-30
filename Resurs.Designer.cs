@@ -135,6 +135,7 @@
             // 
             // tip_cb
             // 
+            this.tip_cb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.tip_cb.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tip_cb.FormattingEnabled = true;
             this.tip_cb.Location = new System.Drawing.Point(116, 110);
@@ -219,6 +220,7 @@
             // 
             // frekv_cb
             // 
+            this.frekv_cb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.frekv_cb.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.frekv_cb.FormattingEnabled = true;
             this.frekv_cb.Items.AddRange(new object[] {
@@ -232,6 +234,7 @@
             // 
             // jm_cb
             // 
+            this.jm_cb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.jm_cb.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.jm_cb.FormattingEnabled = true;
             this.jm_cb.Items.AddRange(new object[] {
@@ -246,6 +249,7 @@
             // 
             // ekspl_cb
             // 
+            this.ekspl_cb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ekspl_cb.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ekspl_cb.FormattingEnabled = true;
             this.ekspl_cb.Items.AddRange(new object[] {
@@ -258,6 +262,7 @@
             // 
             // strv_cb
             // 
+            this.strv_cb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.strv_cb.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.strv_cb.FormattingEnabled = true;
             this.strv_cb.Items.AddRange(new object[] {
@@ -270,6 +275,7 @@
             // 
             // obn_cb
             // 
+            this.obn_cb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.obn_cb.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.obn_cb.FormattingEnabled = true;
             this.obn_cb.Items.AddRange(new object[] {

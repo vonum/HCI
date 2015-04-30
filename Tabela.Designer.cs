@@ -29,6 +29,14 @@
         private void InitializeComponent()
         {
             this.table = new System.Windows.Forms.DataGridView();
+            this.naziv_c = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oznaka_c = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.obn_c = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sv_c = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jm_c = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cena_c = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.izmeni_c = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.obrisi_c = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
             this.dpodaci_gb = new System.Windows.Forms.GroupBox();
@@ -45,6 +53,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.opodaci_gb = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
             this.comboBox7 = new System.Windows.Forms.ComboBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -55,23 +65,14 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.cena_pretraga = new System.Windows.Forms.TextBox();
+            this.naziv_pretraga = new System.Windows.Forms.TextBox();
+            this.tip_pretraga = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.naziv_c = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.oznaka_c = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.obn_c = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sv_c = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jm_c = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cena_c = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.izmeni_c = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.obrisi_c = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.label15 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.table)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.dpodaci_gb.SuspendLayout();
@@ -97,6 +98,52 @@
             this.table.Name = "table";
             this.table.Size = new System.Drawing.Size(843, 278);
             this.table.TabIndex = 0;
+            // 
+            // naziv_c
+            // 
+            this.naziv_c.HeaderText = "Naziv";
+            this.naziv_c.Name = "naziv_c";
+            // 
+            // oznaka_c
+            // 
+            this.oznaka_c.HeaderText = "Oznaka";
+            this.oznaka_c.Name = "oznaka_c";
+            // 
+            // obn_c
+            // 
+            this.obn_c.HeaderText = "Tip";
+            this.obn_c.Name = "obn_c";
+            this.obn_c.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.obn_c.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // sv_c
+            // 
+            this.sv_c.HeaderText = "Frekvencija";
+            this.sv_c.Name = "sv_c";
+            this.sv_c.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.sv_c.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // jm_c
+            // 
+            this.jm_c.HeaderText = "Obnovljivost";
+            this.jm_c.Name = "jm_c";
+            this.jm_c.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.jm_c.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // cena_c
+            // 
+            this.cena_c.HeaderText = "Cena";
+            this.cena_c.Name = "cena_c";
+            // 
+            // izmeni_c
+            // 
+            this.izmeni_c.HeaderText = "Izmeni";
+            this.izmeni_c.Name = "izmeni_c";
+            // 
+            // obrisi_c
+            // 
+            this.obrisi_c.HeaderText = "Obrisi";
+            this.obrisi_c.Name = "obrisi_c";
             // 
             // groupBox1
             // 
@@ -298,6 +345,26 @@
             this.opodaci_gb.TabStop = false;
             this.opodaci_gb.Text = "Osnovni Podaci";
             // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(133, 162);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 12;
+            this.button3.Text = "Izaberi";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(20, 140);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(43, 13);
+            this.label15.TabIndex = 11;
+            this.label15.Text = "Etikete:";
+            // 
             // comboBox7
             // 
             this.comboBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -384,9 +451,10 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox6);
-            this.groupBox2.Controls.Add(this.textBox5);
-            this.groupBox2.Controls.Add(this.textBox4);
+            this.groupBox2.Controls.Add(this.button4);
+            this.groupBox2.Controls.Add(this.cena_pretraga);
+            this.groupBox2.Controls.Add(this.naziv_pretraga);
+            this.groupBox2.Controls.Add(this.tip_pretraga);
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.label12);
@@ -398,32 +466,36 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Pretraga";
             // 
-            // button1
+            // button4
             // 
-            this.button1.Location = new System.Drawing.Point(82, 248);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Pretraga";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button4.Location = new System.Drawing.Point(87, 219);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 7;
+            this.button4.Text = "Reset";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // label12
+            // cena_pretraga
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(27, 58);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(62, 13);
-            this.label12.TabIndex = 1;
-            this.label12.Text = "Tip resursa:";
+            this.cena_pretraga.Location = new System.Drawing.Point(121, 108);
+            this.cena_pretraga.Name = "cena_pretraga";
+            this.cena_pretraga.Size = new System.Drawing.Size(100, 20);
+            this.cena_pretraga.TabIndex = 6;
             // 
-            // label13
+            // naziv_pretraga
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(27, 85);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(37, 13);
-            this.label13.TabIndex = 2;
-            this.label13.Text = "Naziv:";
+            this.naziv_pretraga.Location = new System.Drawing.Point(121, 83);
+            this.naziv_pretraga.Name = "naziv_pretraga";
+            this.naziv_pretraga.Size = new System.Drawing.Size(100, 20);
+            this.naziv_pretraga.TabIndex = 5;
+            // 
+            // tip_pretraga
+            // 
+            this.tip_pretraga.Location = new System.Drawing.Point(121, 57);
+            this.tip_pretraga.Name = "tip_pretraga";
+            this.tip_pretraga.Size = new System.Drawing.Size(100, 20);
+            this.tip_pretraga.TabIndex = 4;
             // 
             // label14
             // 
@@ -434,92 +506,33 @@
             this.label14.TabIndex = 3;
             this.label14.Text = "Cena(<=):";
             // 
-            // textBox4
+            // label13
             // 
-            this.textBox4.Location = new System.Drawing.Point(121, 57);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 4;
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(27, 85);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(37, 13);
+            this.label13.TabIndex = 2;
+            this.label13.Text = "Naziv:";
             // 
-            // textBox5
+            // label12
             // 
-            this.textBox5.Location = new System.Drawing.Point(121, 83);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 5;
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(27, 58);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(62, 13);
+            this.label12.TabIndex = 1;
+            this.label12.Text = "Tip resursa:";
             // 
-            // textBox6
+            // button1
             // 
-            this.textBox6.Location = new System.Drawing.Point(121, 108);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 6;
-            // 
-            // naziv_c
-            // 
-            this.naziv_c.HeaderText = "Naziv";
-            this.naziv_c.Name = "naziv_c";
-            // 
-            // oznaka_c
-            // 
-            this.oznaka_c.HeaderText = "Oznaka";
-            this.oznaka_c.Name = "oznaka_c";
-            // 
-            // obn_c
-            // 
-            this.obn_c.HeaderText = "Tip";
-            this.obn_c.Name = "obn_c";
-            this.obn_c.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.obn_c.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // sv_c
-            // 
-            this.sv_c.HeaderText = "Frekvencija";
-            this.sv_c.Name = "sv_c";
-            this.sv_c.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.sv_c.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // jm_c
-            // 
-            this.jm_c.HeaderText = "Obnovljivost";
-            this.jm_c.Name = "jm_c";
-            this.jm_c.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.jm_c.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // cena_c
-            // 
-            this.cena_c.HeaderText = "Cena";
-            this.cena_c.Name = "cena_c";
-            // 
-            // izmeni_c
-            // 
-            this.izmeni_c.HeaderText = "Izmeni";
-            this.izmeni_c.Name = "izmeni_c";
-            // 
-            // obrisi_c
-            // 
-            this.obrisi_c.HeaderText = "Obrisi";
-            this.obrisi_c.Name = "obrisi_c";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(20, 140);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(43, 13);
-            this.label15.TabIndex = 11;
-            this.label15.Text = "Etikete:";
-            // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(133, 162);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 12;
-            this.button3.Text = "Izaberi";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button1.Location = new System.Drawing.Point(87, 174);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Pretraga";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Tabela
             // 
@@ -579,9 +592,9 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox cena_pretraga;
+        private System.Windows.Forms.TextBox naziv_pretraga;
+        private System.Windows.Forms.TextBox tip_pretraga;
         private System.Windows.Forms.DataGridViewTextBoxColumn naziv_c;
         private System.Windows.Forms.DataGridViewTextBoxColumn oznaka_c;
         private System.Windows.Forms.DataGridViewTextBoxColumn obn_c;
@@ -592,5 +605,6 @@
         private System.Windows.Forms.DataGridViewButtonColumn obrisi_c;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button button4;
     }
 }

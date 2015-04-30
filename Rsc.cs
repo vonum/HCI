@@ -46,7 +46,28 @@ namespace HCI_FINAL
             String _obnovljiv = (obnovljiv) ? "Obnovljiv" : "Neobnovljiv";
             String _cena = cena.ToString();
 
-            return new String[] { _naziv, _oznaka, _tip, _frekv, _obnovljiv, _cena, "Izmeni", "Dodaj" };
+            return new Object[] { _naziv, _oznaka, _tip, _frekv, _obnovljiv, _cena, "Izmeni", "Dodaj" };
+        }
+
+        public bool check(String tip, String naziv, String cena)
+        {
+            int cnt = 0;
+
+            if (!tip.Equals(""))
+                if (this.tip.naziv.Equals(tip))
+                    cnt++;
+            if (!naziv.Equals(""))
+                if (this.naziv.Equals(naziv))
+                    cnt++;
+            if (!cena.Equals(""))
+                if (this.cena == int.Parse(cena))
+                    cnt++;
+
+            if (cnt == 3)
+                return true;
+
+            return false;
+
         }
 
     }

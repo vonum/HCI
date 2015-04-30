@@ -23,15 +23,34 @@ namespace HCI_FINAL
         {
             foreach (Rsc resurs in resursi)
             {
+                //table.Rows.Add(resurs.toString());
+            }
+        }
+
+        protected override void OnLoad(EventArgs e)                             //ucitavanje tabele**********/
+        {
+            foreach (Rsc resurs in resursi)
+            {
                 table.Rows.Add(resurs.toString());
             }
         }
 
-        protected override void OnLoad(EventArgs e)
+        private void button4_Click(object sender, EventArgs e)                  //reset tabele**************/
         {
+            table.Rows.Clear();
             foreach (Rsc resurs in resursi)
             {
-                //table.Rows.Add(resurs.toString());
+                table.Rows.Add(resurs.toString());
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)                  //pretraga po nazivu, tipu i ceni*******/
+        {
+            table.Rows.Clear();
+            foreach (Rsc resurs in resursi)
+            {
+                if (resurs.check(tip_pretraga.Text, naziv_pretraga.Text, cena_pretraga.Text))
+                    table.Rows.Add(resurs.toString());
             }
         }
 
