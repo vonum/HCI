@@ -46,12 +46,20 @@ namespace HCI_FINAL
             String _obnovljiv = (obnovljiv) ? "Obnovljiv" : "Neobnovljiv";
             String _cena = cena.ToString();
 
-            return new Object[] { _naziv, _oznaka, _tip, _frekv, _obnovljiv, _cena, "Izmeni", "Dodaj" };
+            return new Object[] { _naziv, _oznaka, _tip, _frekv, _obnovljiv, _cena, "Izmeni", "Obrisi" };
         }
 
         public bool check(String tip, String naziv, String cena)
         {
             int cnt = 0;
+            int crit = 0;
+
+            if (!tip.Equals(""))
+                crit++;
+            if (!naziv.Equals(""))
+                crit++;
+            if (!cena.Equals(""))
+                crit++;
 
             if (!tip.Equals(""))
                 if (this.tip.naziv.Equals(tip))
@@ -63,7 +71,7 @@ namespace HCI_FINAL
                 if (this.cena == int.Parse(cena))
                     cnt++;
 
-            if (cnt == 3)
+            if (cnt == crit)
                 return true;
 
             return false;

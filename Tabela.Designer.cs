@@ -98,6 +98,7 @@
             this.table.Name = "table";
             this.table.Size = new System.Drawing.Size(843, 278);
             this.table.TabIndex = 0;
+            this.table.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_CellContentClick);
             // 
             // naziv_c
             // 
@@ -379,7 +380,7 @@
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox3.Location = new System.Drawing.Point(116, 84);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(112, 20);
+            this.textBox3.Size = new System.Drawing.Size(114, 20);
             this.textBox3.TabIndex = 9;
             // 
             // textBox2
