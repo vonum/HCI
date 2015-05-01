@@ -11,3 +11,4 @@ C:\Users\Owner\Desktop\hci\HCI_FINAL\obj\x86\Debug\HCI_FINAL.pdb
 C:\Users\Owner\Desktop\hci\HCI_FINAL\obj\x86\Debug\HCI_FINAL.Etiketa.resources
 C:\Users\Owner\Desktop\hci\HCI_FINAL\obj\x86\Debug\HCI_FINAL.TipResursa.resources
 C:\Users\Owner\Desktop\hci\HCI_FINAL\obj\x86\Debug\HCI_FINAL.Tabela.resources
+C:\Users\Owner\Desktop\hci\HCI_FINAL\obj\x86\Debug\HCI_FINAL.Izmena.resources

@@ -43,7 +43,7 @@ namespace HCI_FINAL
 
         private void tabelaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Tabela t = new Tabela(resursi);
+            Tabela t = new Tabela(resursi, tipovi);
             t.Show();
         }
     }

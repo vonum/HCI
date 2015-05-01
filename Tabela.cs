@@ -12,11 +12,13 @@ namespace HCI_FINAL
     partial class Tabela : Form
     {
         public List<Rsc> resursi;
+        public List<TR> tipovi;
 
-        public Tabela(List<Rsc> resursi)
+        public Tabela(List<Rsc> resursi, List<TR> tipovi)
         {
             InitializeComponent();
             this.resursi = resursi;
+            this.tipovi = tipovi;
         }
 
         private void Tabela_Load(object sender, EventArgs e)
@@ -59,7 +61,8 @@ namespace HCI_FINAL
 
             if (e.ColumnIndex == 6)
             {
-
+                Izmena izm = new Izmena(tipovi, resursi.ElementAt(table.CurrentRow.Index), table.CurrentRow.Index);
+                izm.Show();
             }
             else
                 if (e.ColumnIndex == 7)
