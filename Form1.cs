@@ -25,9 +25,23 @@ namespace HCI_FINAL
             InitializeComponent();
             //komentar
 
+            BinaryFormatter bin = new BinaryFormatter();
+            
             Stream stream = File.Open("etikete.bin", FileMode.Open);
-			BinaryFormatter bin = new BinaryFormatter();
-			etikete = (List<Et>)bin.Deserialize(stream);
+            if(stream.Length != 0)
+			    etikete = (List<Et>)bin.Deserialize(stream);
+            stream.Close();
+
+            stream = File.Open("tipovi.bin", FileMode.Open);
+                if (stream.Length != 0)
+            tipovi = (List<TR>)bin.Deserialize(stream);
+            stream.Close();
+
+            stream = File.Open("resursi.bin", FileMode.Open);
+            if (stream.Length != 0)
+                resursi = (List<Rsc>)bin.Deserialize(stream);
+            stream.Close();
+
 
         }
 
@@ -60,6 +74,16 @@ namespace HCI_FINAL
             Stream stream = File.Open("etikete.bin", FileMode.Create);
 			BinaryFormatter bin = new BinaryFormatter();
 			bin.Serialize(stream, etikete);
+            stream.Close();
+
+            stream = File.Open("tipovi.bin", FileMode.Create);
+            bin.Serialize(stream, tipovi);
+            stream.Close();
+
+            stream = File.Open("resursi.bin", FileMode.Create);
+            bin.Serialize(stream, resursi);
+            stream.Close();
+
         }
     }
 }
