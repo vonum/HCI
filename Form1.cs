@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace HCI_FINAL
 {
@@ -21,6 +23,12 @@ namespace HCI_FINAL
             tipovi = new List<TR>();
             resursi = new List<Rsc>();
             InitializeComponent();
+            //komentar
+
+            Stream stream = File.Open("etikete.bin", FileMode.Open);
+			BinaryFormatter bin = new BinaryFormatter();
+			etikete = (List<Et>)bin.Deserialize(stream);
+
         }
 
         private void resursToolStripMenuItem_Click(object sender, EventArgs e)
@@ -45,6 +53,13 @@ namespace HCI_FINAL
         {
             Tabela t = new Tabela(resursi, tipovi);
             t.Show();
+        }
+
+        private void sacuvajToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Stream stream = File.Open("etikete.bin", FileMode.Create);
+			BinaryFormatter bin = new BinaryFormatter();
+			bin.Serialize(stream, etikete);
         }
     }
 }

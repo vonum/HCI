@@ -5,6 +5,7 @@ using System.Text;
 
 namespace HCI_FINAL
 {
+    [Serializable]
     class Et
     {
         public String oznaka;

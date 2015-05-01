@@ -8,7 +8,7 @@ namespace HCI_FINAL
     enum Frekvencija { REDAK, CEST, UNIVERZALAN };
     enum JedinicaMere { MERICA, BAREL, TONA, KG };
 
-
+    [Serializable]
     class Rsc
     {
         public String naziv;
@@ -18,7 +18,7 @@ namespace HCI_FINAL
         public bool obnovljiv;
         public bool eskploativ;
         public bool str_vaznost;
-        public String datum;
+        public String datum;                            //TREBA UBACITI
         public System.Drawing.Image ikonica;
         public List<Et> etikete;
         public int cena;
