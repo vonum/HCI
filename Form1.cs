@@ -85,5 +85,23 @@ namespace HCI_FINAL
             stream.Close();
 
         }
+
+        private void etiketeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TabelaEtikete te = new TabelaEtikete(etikete);
+            te.Show();
+        }
+
+        private void tipoviResursaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TabelaTipovi tt = new TabelaTipovi(tipovi);
+            tt.Show();
+        }
+
+        private void resursiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Tabela t = new Tabela(resursi, tipovi);
+            t.Show();
+        }
     }
 }

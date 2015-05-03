@@ -20,5 +20,10 @@ namespace HCI_FINAL
             this.opis = opis;
         }
 
+        public Object[] toString()
+        {
+            return new String[] { oznaka, opis, color.ToString(), "Izmeni", "Obrisi" };
+        }
+
     }
 }

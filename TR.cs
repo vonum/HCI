@@ -22,5 +22,10 @@ namespace HCI_FINAL
             this.ikonica = ikonica;
         }
 
+        public Object[] toString()
+        {
+            return new String[] { naziv, oznaka, opis, "Izmeni", "Obrisi" };
+        }
+
     }
 }

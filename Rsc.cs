@@ -68,7 +68,7 @@ namespace HCI_FINAL
                 if (this.naziv.Equals(naziv))
                     cnt++;
             if (!cena.Equals(""))
-                if (this.cena == int.Parse(cena))
+                if (this.cena <= int.Parse(cena))
                     cnt++;
 
             if (cnt == crit)

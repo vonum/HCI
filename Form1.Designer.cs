@@ -34,6 +34,9 @@
             this.tipResursaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.etiketaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabelaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.resursiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tipoviResursaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.etiketeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pretragaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sacuvajToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
@@ -85,10 +88,35 @@
             // 
             // tabelaToolStripMenuItem
             // 
+            this.tabelaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.resursiToolStripMenuItem,
+            this.tipoviResursaToolStripMenuItem,
+            this.etiketeToolStripMenuItem});
             this.tabelaToolStripMenuItem.Name = "tabelaToolStripMenuItem";
             this.tabelaToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
             this.tabelaToolStripMenuItem.Text = "Tabela";
             this.tabelaToolStripMenuItem.Click += new System.EventHandler(this.tabelaToolStripMenuItem_Click);
+            // 
+            // resursiToolStripMenuItem
+            // 
+            this.resursiToolStripMenuItem.Name = "resursiToolStripMenuItem";
+            this.resursiToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.resursiToolStripMenuItem.Text = "Resursi";
+            this.resursiToolStripMenuItem.Click += new System.EventHandler(this.resursiToolStripMenuItem_Click);
+            // 
+            // tipoviResursaToolStripMenuItem
+            // 
+            this.tipoviResursaToolStripMenuItem.Name = "tipoviResursaToolStripMenuItem";
+            this.tipoviResursaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.tipoviResursaToolStripMenuItem.Text = "Tipovi resursa";
+            this.tipoviResursaToolStripMenuItem.Click += new System.EventHandler(this.tipoviResursaToolStripMenuItem_Click);
+            // 
+            // etiketeToolStripMenuItem
+            // 
+            this.etiketeToolStripMenuItem.Name = "etiketeToolStripMenuItem";
+            this.etiketeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.etiketeToolStripMenuItem.Text = "Etikete";
+            this.etiketeToolStripMenuItem.Click += new System.EventHandler(this.etiketeToolStripMenuItem_Click);
             // 
             // pretragaToolStripMenuItem
             // 
@@ -130,6 +158,9 @@
         private System.Windows.Forms.ToolStripMenuItem tabelaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pretragaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sacuvajToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem resursiToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tipoviResursaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem etiketeToolStripMenuItem;
 
     }
 }
