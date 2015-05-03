@@ -62,10 +62,10 @@ namespace HCI_FINAL
                 crit++;
 
             if (!tip.Equals(""))
-                if (this.tip.naziv.Equals(tip))
+                if (this.tip.naziv.IndexOf(tip) != -1)
                     cnt++;
             if (!naziv.Equals(""))
-                if (this.naziv.Equals(naziv))
+                if (this.naziv.IndexOf(naziv) != -1)
                     cnt++;
             if (!cena.Equals(""))
                 if (this.cena <= int.Parse(cena))
