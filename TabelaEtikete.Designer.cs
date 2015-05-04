@@ -51,6 +51,7 @@
             this.table.Name = "table";
             this.table.Size = new System.Drawing.Size(546, 393);
             this.table.TabIndex = 0;
+            this.table.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_CellContentClick);
             // 
             // oznaka
             // 

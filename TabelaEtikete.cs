@@ -27,5 +27,19 @@ namespace HCI_FINAL
             }
         }
 
+        private void table_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 4)
+            {
+                etikete.RemoveAt(table.CurrentRow.Index);
+                table.Rows.Remove(table.Rows[table.CurrentRow.Index]);
+            }
+            else
+                if (e.ColumnIndex == 3)
+                {
+
+                }
+        }
+
     }
 }
