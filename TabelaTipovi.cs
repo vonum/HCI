@@ -12,6 +12,7 @@ namespace HCI_FINAL
     partial class TabelaTipovi : Form
     {
         public List<TR> tipovi;
+        public List<Rsc> resursi;
 
         public TabelaTipovi(List<TR> tipovi)
         {

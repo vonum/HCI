@@ -12,6 +12,7 @@ namespace HCI_FINAL
     partial class TabelaEtikete : Form
     {
         public List<Et> etikete;
+        public List<Rsc> resursi;
 
         public TabelaEtikete(List<Et> etikete)
         {

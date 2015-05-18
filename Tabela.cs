@@ -70,7 +70,30 @@ namespace HCI_FINAL
                     resursi.RemoveAt(table.CurrentRow.Index);
                     table.Rows.Remove(table.Rows[table.CurrentRow.Index]);
                 }
-            
+                else
+                {
+                    Rsc tmp = resursi.ElementAt(table.CurrentRow.Index);
+                    oznaka_tb.Text = tmp.oznaka;
+                    naziv_tb.Text = tmp.naziv;
+                    opis_tb.Text = tmp.opis;
+                    tip_tb.Text = tmp.tip.naziv;
+                    if (tmp.obnovljiv)
+                        obn_tb.Text = "Obnovljiv";
+                    else
+                        obn_tb.Text = "Neobnovljiv";
+                    if (tmp.str_vaznost)
+                        strv_tb.Text = "Bitan";
+                    else
+                        strv_tb.Text = "Nebitan";
+                    jm_tb.Text = tmp.jm.ToString();
+                    if (tmp.eskploativ)
+                        ekspl_tb.Text = "Eksploativ";
+                    else
+                        ekspl_tb.Text = "Neeksploativ";
+                    cena_tb.Text = tmp.cena.ToString();
+                    frekv_tb.Text = tmp.frekv.ToString();
+                }
+
         }
 
     }
