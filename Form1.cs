@@ -65,8 +65,8 @@ namespace HCI_FINAL
 
         private void tabelaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Tabela t = new Tabela(resursi, tipovi);
-            t.Show();
+            //Tabela t = new Tabela(resursi, tipovi);
+            //t.Show();
         }
 
         private void sacuvajToolStripMenuItem_Click(object sender, EventArgs e)
@@ -88,13 +88,13 @@ namespace HCI_FINAL
 
         private void etiketeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            TabelaEtikete te = new TabelaEtikete(etikete);
+            TabelaEtikete te = new TabelaEtikete(etikete, resursi);
             te.Show();
         }
 
         private void tipoviResursaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            TabelaTipovi tt = new TabelaTipovi(tipovi);
+            TabelaTipovi tt = new TabelaTipovi(tipovi, resursi);
             tt.Show();
         }
 

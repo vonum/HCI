@@ -65,6 +65,18 @@
     <Compile Include="Izmena.Designer.cs">
       <DependentUpon>Izmena.cs</DependentUpon>
     </Compile>
+    <Compile Include="IzmenaEtikete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IzmenaEtikete.Designer.cs">
+      <DependentUpon>IzmenaEtikete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IzmenaTip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IzmenaTip.Designer.cs">
+      <DependentUpon>IzmenaTip.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resurs.cs">
@@ -107,6 +119,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Izmena.resx">
       <DependentUpon>Izmena.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IzmenaEtikete.resx">
+      <DependentUpon>IzmenaEtikete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IzmenaTip.resx">
+      <DependentUpon>IzmenaTip.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

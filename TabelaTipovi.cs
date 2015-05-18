@@ -14,10 +14,11 @@ namespace HCI_FINAL
         public List<TR> tipovi;
         public List<Rsc> resursi;
 
-        public TabelaTipovi(List<TR> tipovi)
+        public TabelaTipovi(List<TR> tipovi, List<Rsc> resursi)
         {
             InitializeComponent();
             this.tipovi = tipovi;
+            this.resursi = resursi;
         }
 
         protected override void OnLoad(EventArgs e)                             //ucitavanje tabele**********/
@@ -32,8 +33,22 @@ namespace HCI_FINAL
         {
             if (e.ColumnIndex == 4)
             {
+                TR tip = tipovi.ElementAt(table.CurrentRow.Index);
+
+                foreach (Rsc resurs in resursi)
+                {
+                    if (resurs.tip == tip)
+                        return;
+                }
+
+
                 tipovi.RemoveAt(table.CurrentRow.Index);
                 table.Rows.Remove(table.Rows[table.CurrentRow.Index]);
+            }
+            else if (e.ColumnIndex == 3)
+            {
+                IzmenaTip izmtip = new IzmenaTip(tipovi.ElementAt(table.CurrentRow.Index));
+                izmtip.Show();
             }
         }
 

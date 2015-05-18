@@ -14,10 +14,11 @@ namespace HCI_FINAL
         public List<Et> etikete;
         public List<Rsc> resursi;
 
-        public TabelaEtikete(List<Et> etikete)
+        public TabelaEtikete(List<Et> etikete, List<Rsc> resursi)
         {
             InitializeComponent();
             this.etikete = etikete;
+            this.resursi = resursi;
         }
 
         protected override void OnLoad(EventArgs e)                             //ucitavanje tabele**********/
@@ -32,13 +33,22 @@ namespace HCI_FINAL
         {
             if (e.ColumnIndex == 4)
             {
+                Et et = etikete.ElementAt(table.CurrentRow.Index);
+
+                foreach (Rsc resurs in resursi)
+                {
+                    if (resurs.etikete.Contains(et))
+                        return;
+                }
+
                 etikete.RemoveAt(table.CurrentRow.Index);
                 table.Rows.Remove(table.Rows[table.CurrentRow.Index]);
             }
             else
                 if (e.ColumnIndex == 3)
                 {
-
+                    IzmenaEtikete izmet = new IzmenaEtikete(etikete.ElementAt(table.CurrentRow.Index));
+                    izmet.Show();
                 }
         }
 

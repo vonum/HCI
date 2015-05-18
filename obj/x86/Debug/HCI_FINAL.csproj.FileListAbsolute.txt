@@ -14,3 +14,5 @@ C:\Users\Owner\Desktop\hci\HCI_FINAL\obj\x86\Debug\HCI_FINAL.Tabela.resources
 C:\Users\Owner\Desktop\hci\HCI_FINAL\obj\x86\Debug\HCI_FINAL.Izmena.resources
 C:\Users\Owner\Desktop\hci\HCI_FINAL\obj\x86\Debug\HCI_FINAL.TabelaEtikete.resources
 C:\Users\Owner\Desktop\hci\HCI_FINAL\obj\x86\Debug\HCI_FINAL.TabelaTipovi.resources
+C:\Users\Owner\Desktop\hci\HCI_FINAL\obj\x86\Debug\HCI_FINAL.IzmenaEtikete.resources
+C:\Users\Owner\Desktop\hci\HCI_FINAL\obj\x86\Debug\HCI_FINAL.IzmenaTip.resources
