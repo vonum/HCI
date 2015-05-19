@@ -23,9 +23,12 @@ namespace HCI_FINAL
 
         protected override void OnLoad(EventArgs e)                             //ucitavanje tabele**********/
         {
+            int i = 0;
             foreach (Et et in etikete)
             {
                 table.Rows.Add(et.toString());
+                table.Rows[i].Cells[2].Style.BackColor = et.color;
+                i++;
             }
         }
 

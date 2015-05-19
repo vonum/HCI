@@ -22,7 +22,7 @@ namespace HCI_FINAL
 
         public Object[] toString()
         {
-            return new String[] { oznaka, opis, color.ToString(), "Izmeni", "Obrisi" };
+            return new String[] { oznaka, opis, "", "Izmeni", "Obrisi" };
         }
 
     }
