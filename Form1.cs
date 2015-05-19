@@ -17,6 +17,11 @@ namespace HCI_FINAL
         public List<TR> tipovi;
         public List<Rsc> resursi;
 
+
+        private Rectangle _mouseDownSelekcioniProzor;
+        private Point _ofsetEkrana;
+        private TreeNode _indeksPrevucenogCvora;
+
         public Form1()
         {
             etikete = new List<Et>();
@@ -103,5 +108,92 @@ namespace HCI_FINAL
             Tabela t = new Tabela(resursi, tipovi);
             t.Show();
         }
+
+        protected override void OnLoad(EventArgs e)                             //ucitavanje stabla**********/
+        {
+            foreach(Rsc resurs in resursi)
+            {
+                stablo.Nodes[0].Nodes.Add(resurs.naziv);
+            }
+        }
+
+        private void stablo_MouseDown(object sender, MouseEventArgs e)
+        {
+            _indeksPrevucenogCvora = stablo.GetNodeAt(e.Location);
+            if (_indeksPrevucenogCvora != null)
+            {
+                stablo.SelectedNode = _indeksPrevucenogCvora;
+                if (_indeksPrevucenogCvora.GetNodeCount(true) == 0 && _indeksPrevucenogCvora.ForeColor != Color.Gray)
+                {
+
+                    System.Drawing.Size dragVelicina = SystemInformation.DragSize;
+                    _mouseDownSelekcioniProzor = new Rectangle(new Point(e.X - (dragVelicina.Width / 2), e.Y - (dragVelicina.Height / 2)), dragVelicina);
+                }
+                else
+                {
+                    _mouseDownSelekcioniProzor = Rectangle.Empty;
+                }
+
+            }
+        }
+
+        private void stablo_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                if (_mouseDownSelekcioniProzor != Rectangle.Empty && !_mouseDownSelekcioniProzor.Contains(e.X, e.Y))
+                {
+                    _ofsetEkrana = SystemInformation.WorkingArea.Location;
+                    DragDropEffects dropEfekat = stablo.DoDragDrop(_indeksPrevucenogCvora, DragDropEffects.Copy);
+                }
+            }
+        }
+
+        private void panel1_DragEnter(object sender, DragEventArgs e)
+        {
+            Type testTip = new TreeNode().GetType();
+            if (e.Data.GetDataPresent(testTip))
+            {
+                e.Effect = DragDropEffects.Copy;
+            }
+            else
+            {
+                e.Effect = DragDropEffects.None;
+            }
+        }
+
+        private void panel1_DragDrop(object sender, DragEventArgs e)
+        {
+            Type testTip = new TreeNode().GetType();
+            _mouseDownSelekcioniProzor = Rectangle.Empty;
+
+            if (e.Data.GetDataPresent(testTip))
+            {
+                Point screenCords = Cursor.Position;
+                Point panelCords = panel1.PointToClient(screenCords);
+
+                PictureBox p = new PictureBox();
+
+                p.MouseClick += new MouseEventHandler(selectImage);
+                p.Size = new Size(50, 50);
+                p.SizeMode = PictureBoxSizeMode.StretchImage;
+                p.Location = panelCords;
+                panel1.Controls.Add(p);
+            }
+
+        }
+
+        private void selectImage(object sender, MouseEventArgs e)
+        {
+            foreach (PictureBox p in panel1.Controls)
+            {
+                p.BorderStyle = BorderStyle.None;
+            }
+
+
+            ((PictureBox)sender).BorderStyle = BorderStyle.FixedSingle;
+        }
+
+
     }
 }
