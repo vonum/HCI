@@ -23,13 +23,7 @@ namespace HCI_FINAL
 
         protected override void OnLoad(EventArgs e)                             //ucitavanje tabele**********/
         {
-            int i = 0;
-            foreach (Et et in etikete)
-            {
-                table.Rows.Add(et.toString());
-                table.Rows[i].Cells[2].Style.BackColor = et.color;
-                i++;
-            }
+            refresh();
         }
 
         private void table_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -50,9 +44,22 @@ namespace HCI_FINAL
             else
                 if (e.ColumnIndex == 3)
                 {
-                    IzmenaEtikete izmet = new IzmenaEtikete(etikete.ElementAt(table.CurrentRow.Index));
+                    IzmenaEtikete izmet = new IzmenaEtikete(etikete.ElementAt(table.CurrentRow.Index), this);
                     izmet.Show();
                 }
+        }
+
+        public void refresh()
+        {
+            table.Rows.Clear();
+            int i = 0;
+            foreach (Et et in etikete)
+            {
+                table.Rows.Add(et.toString());
+                table.Rows[i].Cells[2].Style.BackColor = et.color;
+                i++;
+            }
+
         }
 
     }

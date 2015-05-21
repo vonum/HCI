@@ -31,10 +31,7 @@ namespace HCI_FINAL
 
         protected override void OnLoad(EventArgs e)                             //ucitavanje tabele**********/
         {
-            foreach (Rsc resurs in resursi)
-            {
-                table.Rows.Add(resurs.toString());
-            }
+            refresh();
         }
 
         private void button4_Click(object sender, EventArgs e)                  //reset tabele**************/
@@ -61,7 +58,7 @@ namespace HCI_FINAL
 
             if (e.ColumnIndex == 6)
             {
-                Izmena izm = new Izmena(tipovi, resursi.ElementAt(table.CurrentRow.Index), table.CurrentRow.Index);
+                Izmena izm = new Izmena(tipovi, resursi.ElementAt(table.CurrentRow.Index), this);
                 izm.Show(); 
             }
             else
@@ -95,5 +92,15 @@ namespace HCI_FINAL
                 }
 
         }
+
+        public void refresh()
+        {
+            table.Rows.Clear();
+            foreach (Rsc resurs in resursi)
+            {
+                table.Rows.Add(resurs.toString());
+            }
+        }
+
     }
 }

@@ -14,11 +14,13 @@ namespace HCI_FINAL
         public System.Drawing.Image img;
         public Rsc resurs;
         public List<TR> tipovi;
+        public Tabela table;
 
-        public Izmena(List<TR> tipovi, Rsc resurs, int idx)
+        public Izmena(List<TR> tipovi, Rsc resurs, Tabela table)
         {
             this.resurs = resurs;
             this.tipovi = tipovi;
+            this.table = table;
             InitializeComponent();
         }
 
@@ -108,6 +110,8 @@ namespace HCI_FINAL
                     break;
                 }
             }
+
+            table.refresh();
 
             this.Close();
         }

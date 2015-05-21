@@ -13,12 +13,14 @@ namespace HCI_FINAL
     {
         public System.Drawing.Color color;
         public Et etiketa;
+        public TabelaEtikete te;
 
-        public IzmenaEtikete(Et etiketa)
+        public IzmenaEtikete(Et etiketa, TabelaEtikete te)
         {
             InitializeComponent();
             this.etiketa = etiketa;
             color = etiketa.color;
+            this.te = te;
         }
 
         private void button1_Click(object sender, EventArgs e)                  //povratak
@@ -31,6 +33,8 @@ namespace HCI_FINAL
             etiketa.color = color;
             etiketa.opis = opis_tb.Text;
             etiketa.oznaka = oznaka_tb.Text;
+
+            te.refresh();
 
             this.Close();
         }

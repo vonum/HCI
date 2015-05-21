@@ -13,12 +13,14 @@ namespace HCI_FINAL
     {
         public TR tr;
         public System.Drawing.Image img;
+        public TabelaTipovi tt;
 
-        public IzmenaTip(TR tr)
+        public IzmenaTip(TR tr, TabelaTipovi tt)
         {
             InitializeComponent();
             this.tr = tr;
             img = tr.ikonica;
+            this.tt = tt;
         }
             
         private void button1_Click(object sender, EventArgs e)                  //povratak
@@ -32,6 +34,8 @@ namespace HCI_FINAL
             tr.naziv = naziv_tb.Text;
             tr.opis = opis_tb.Text;
             tr.oznaka = oznaka_tb.Text;
+
+            tt.refresh();
 
             this.Close();
         }

@@ -23,10 +23,7 @@ namespace HCI_FINAL
 
         protected override void OnLoad(EventArgs e)                             //ucitavanje tabele**********/
         {
-            foreach (TR tr in tipovi)
-            {
-                table.Rows.Add(tr.toString());
-            }
+            refresh();
         }
 
         private void table_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -47,8 +44,17 @@ namespace HCI_FINAL
             }
             else if (e.ColumnIndex == 3)
             {
-                IzmenaTip izmtip = new IzmenaTip(tipovi.ElementAt(table.CurrentRow.Index));
+                IzmenaTip izmtip = new IzmenaTip(tipovi.ElementAt(table.CurrentRow.Index), this);
                 izmtip.Show();
+            }
+        }
+
+        public void refresh()
+        {
+            table.Rows.Clear();
+            foreach (TR tr in tipovi)
+            {
+                table.Rows.Add(tr.toString());
             }
         }
 
