@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Resursi");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Resursi");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.dodajToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,6 +45,7 @@
             this.stablo = new System.Windows.Forms.TreeView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.tmpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,7 +55,8 @@
             this.dodajToolStripMenuItem,
             this.tabelaToolStripMenuItem,
             this.pretragaToolStripMenuItem,
-            this.sacuvajToolStripMenuItem});
+            this.sacuvajToolStripMenuItem,
+            this.tmpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(758, 24);
@@ -143,10 +145,10 @@
             this.stablo.ImageList = this.imageList1;
             this.stablo.Location = new System.Drawing.Point(0, 27);
             this.stablo.Name = "stablo";
-            treeNode2.Name = "resursi";
-            treeNode2.Text = "Resursi";
+            treeNode1.Name = "resursi";
+            treeNode1.Text = "Resursi";
             this.stablo.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode2});
+            treeNode1});
             this.stablo.SelectedImageIndex = 0;
             this.stablo.Size = new System.Drawing.Size(121, 609);
             this.stablo.TabIndex = 1;
@@ -170,6 +172,13 @@
             this.panel1.TabIndex = 2;
             this.panel1.DragDrop += new System.Windows.Forms.DragEventHandler(this.panel1_DragDrop);
             this.panel1.DragEnter += new System.Windows.Forms.DragEventHandler(this.panel1_DragEnter);
+            // 
+            // tmpToolStripMenuItem
+            // 
+            this.tmpToolStripMenuItem.Name = "tmpToolStripMenuItem";
+            this.tmpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.tmpToolStripMenuItem.Text = "Tmp";
+            this.tmpToolStripMenuItem.Click += new System.EventHandler(this.tmpToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -205,6 +214,7 @@
         private System.Windows.Forms.TreeView stablo;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ToolStripMenuItem tmpToolStripMenuItem;
 
     }
 }

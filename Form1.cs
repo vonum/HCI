@@ -16,6 +16,8 @@ namespace HCI_FINAL
         public List<Et> etikete;
         public List<TR> tipovi;
         public List<Rsc> resursi;
+        public List<SerIkonica> ikonice;
+        public PictureBox selectedPB;
 
 
         private Rectangle _mouseDownSelekcioniProzor;
@@ -27,6 +29,7 @@ namespace HCI_FINAL
             etikete = new List<Et>();
             tipovi = new List<TR>();
             resursi = new List<Rsc>();
+            ikonice = new List<SerIkonica>();
             InitializeComponent();
             //komentar
 
@@ -38,8 +41,8 @@ namespace HCI_FINAL
             stream.Close();
 
             stream = File.Open("tipovi.bin", FileMode.Open);
-                if (stream.Length != 0)
-            tipovi = (List<TR>)bin.Deserialize(stream);
+            if (stream.Length != 0)
+                tipovi = (List<TR>)bin.Deserialize(stream);
             stream.Close();
 
             stream = File.Open("resursi.bin", FileMode.Open);
@@ -47,28 +50,34 @@ namespace HCI_FINAL
                 resursi = (List<Rsc>)bin.Deserialize(stream);
             stream.Close();
 
+            stream = File.Open("ikonice.bin", FileMode.Open);
+            if (stream.Length != 0)
+                ikonice = (List<SerIkonica>)bin.Deserialize(stream);
+            stream.Close();
+
+
 
         }
 
-        private void resursToolStripMenuItem_Click(object sender, EventArgs e)
+        private void resursToolStripMenuItem_Click(object sender, EventArgs e)                  //dodavanje resursa
         {
             Resurs r = new Resurs(tipovi, etikete, resursi);
             r.Show();
         }
 
-        private void tipResursaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void tipResursaToolStripMenuItem_Click(object sender, EventArgs e)              //dodavanje tipa resursa
         {
             TipResursa tr = new TipResursa(tipovi);
             tr.Show();
         }
 
-        private void etiketaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void etiketaToolStripMenuItem_Click(object sender, EventArgs e)                 //dodavanje etikete
         {
             Etiketa et = new Etiketa(etikete);
             et.Show();
         }
 
-        private void tabelaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void tabelaToolStripMenuItem_Click(object sender, EventArgs e)                     //my nigga
         {
             //Tabela t = new Tabela(resursi, tipovi);
             //t.Show();
@@ -87,6 +96,10 @@ namespace HCI_FINAL
 
             stream = File.Open("resursi.bin", FileMode.Create);
             bin.Serialize(stream, resursi);
+            stream.Close();
+
+            stream = File.Open("ikonice.bin", FileMode.Create);
+            bin.Serialize(stream, ikonice);
             stream.Close();
 
         }
@@ -115,12 +128,22 @@ namespace HCI_FINAL
             {
                 stablo.Nodes[0].Nodes.Add(resurs.naziv);
             }
+
+            foreach (SerIkonica ikonica in ikonice)                             //izmeniti ovaj deo
+            {
+                PictureBox p = new PictureBox();
+                p.Image = ikonica.ikonica;
+                p.Location = ikonica.lokacija;
+                p.Size = new Size(50, 50);
+                p.MouseClick += new MouseEventHandler(selectImage);
+                this.panel1.Controls.Add(p); 
+            }
         }
 
-        private void stablo_MouseDown(object sender, MouseEventArgs e)
+        private void stablo_MouseDown(object sender, MouseEventArgs e)          //pritisak na treenode u stablu
         {
             _indeksPrevucenogCvora = stablo.GetNodeAt(e.Location);
-            if (_indeksPrevucenogCvora != null)
+            if (_indeksPrevucenogCvora != null)                                    //ako je kliknuto na treenode
             {
                 stablo.SelectedNode = _indeksPrevucenogCvora;
                 if (_indeksPrevucenogCvora.GetNodeCount(true) == 0 && _indeksPrevucenogCvora.ForeColor != Color.Gray)
@@ -137,9 +160,9 @@ namespace HCI_FINAL
             }
         }
 
-        private void stablo_MouseMove(object sender, MouseEventArgs e)
+        private void stablo_MouseMove(object sender, MouseEventArgs e)              //pomeranje misa
         {
-            if (e.Button == MouseButtons.Left)
+            if (e.Button == MouseButtons.Left)                                      //postavljanje kursora na odgovarajuci
             {
                 if (_mouseDownSelekcioniProzor != Rectangle.Empty && !_mouseDownSelekcioniProzor.Contains(e.X, e.Y))
                 {
@@ -149,7 +172,7 @@ namespace HCI_FINAL
             }
         }
 
-        private void panel1_DragEnter(object sender, DragEventArgs e)
+        private void panel1_DragEnter(object sender, DragEventArgs e)                       //ulazak kursorom na panel
         {
             Type testTip = new TreeNode().GetType();
             if (e.Data.GetDataPresent(testTip))
@@ -162,7 +185,7 @@ namespace HCI_FINAL
             }
         }
 
-        private void panel1_DragDrop(object sender, DragEventArgs e)
+        private void panel1_DragDrop(object sender, DragEventArgs e)                         //dodavanje ikonice na panel
         {
             Type testTip = new TreeNode().GetType();
             _mouseDownSelekcioniProzor = Rectangle.Empty;
@@ -179,20 +202,40 @@ namespace HCI_FINAL
                 p.SizeMode = PictureBoxSizeMode.StretchImage;
                 p.Location = panelCords;
                 panel1.Controls.Add(p);
+                ikonice.Add(new SerIkonica(p.Name, p.Location, p.Image)); //dodavanje u listu za serijalizaciju
             }
 
         }
 
-        private void selectImage(object sender, MouseEventArgs e)
+        private void selectImage(object sender, MouseEventArgs e)           //postavljanje bordera na selectovani picturebox
         {
             foreach (PictureBox p in panel1.Controls)
             {
                 p.BorderStyle = BorderStyle.None;
             }
 
-
+            selectedPB = (PictureBox)sender;
             ((PictureBox)sender).BorderStyle = BorderStyle.FixedSingle;
         }
+
+        private void tmpToolStripMenuItem_Click(object sender, EventArgs e)             //brisanje ikonica sa mape
+        {   
+            if (selectedPB != null)
+            {
+                panel1.Controls.Remove(selectedPB);
+                foreach (SerIkonica ikonica in ikonice)
+                {
+                    if (ikonica.lokacija.Equals(selectedPB.Location))
+                    {
+                        ikonice.Remove(ikonica);
+                        break;
+                    }
+                }
+                selectedPB = null;
+            }
+        }
+
+
 
 
     }

@@ -62,7 +62,7 @@ namespace HCI_FINAL
             if (e.ColumnIndex == 6)
             {
                 Izmena izm = new Izmena(tipovi, resursi.ElementAt(table.CurrentRow.Index), table.CurrentRow.Index);
-                izm.Show();
+                izm.Show(); 
             }
             else
                 if (e.ColumnIndex == 7)
@@ -95,6 +95,5 @@ namespace HCI_FINAL
                 }
 
         }
-
     }
 }

@@ -86,6 +86,7 @@
       <DependentUpon>Resurs.cs</DependentUpon>
     </Compile>
     <Compile Include="Rsc.cs" />
+    <Compile Include="SerIkonica.cs" />
     <Compile Include="Tabela.cs">
       <SubType>Form</SubType>
     </Compile>
