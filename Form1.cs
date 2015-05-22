@@ -23,6 +23,7 @@ namespace HCI_FINAL
         private Rectangle _mouseDownSelekcioniProzor;
         private Point _ofsetEkrana;
         private TreeNode _indeksPrevucenogCvora;
+        private Point pos;
 
         public Form1()
         {
@@ -61,7 +62,7 @@ namespace HCI_FINAL
 
         private void resursToolStripMenuItem_Click(object sender, EventArgs e)                  //dodavanje resursa
         {
-            Resurs r = new Resurs(tipovi, etikete, resursi);
+            Resurs r = new Resurs(tipovi, etikete, resursi, this);
             r.Show();
         }
 
@@ -118,7 +119,7 @@ namespace HCI_FINAL
 
         private void resursiToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Tabela t = new Tabela(resursi, tipovi);
+            Tabela t = new Tabela(resursi, tipovi, this);
             t.Show();
         }
 
@@ -134,8 +135,13 @@ namespace HCI_FINAL
                 PictureBox p = new PictureBox();
                 p.Image = ikonica.ikonica;
                 p.Location = ikonica.lokacija;
-                p.Size = new Size(50, 50);
+                p.Size = new Size(30, 30);
+                p.Name = ikonica.naziv;
                 p.MouseClick += new MouseEventHandler(selectImage);
+                p.MouseHover += new EventHandler(hover);
+                p.SizeMode = PictureBoxSizeMode.StretchImage;
+                //p.MouseMove += new MouseEventHandler(move);
+                //p.MouseDown += new MouseEventHandler(down);
                 this.panel1.Controls.Add(p); 
             }
         }
@@ -175,6 +181,7 @@ namespace HCI_FINAL
         private void panel1_DragEnter(object sender, DragEventArgs e)                       //ulazak kursorom na panel
         {
             Type testTip = new TreeNode().GetType();
+
             if (e.Data.GetDataPresent(testTip))
             {
                 e.Effect = DragDropEffects.Copy;
@@ -188,6 +195,7 @@ namespace HCI_FINAL
         private void panel1_DragDrop(object sender, DragEventArgs e)                         //dodavanje ikonice na panel
         {
             Type testTip = new TreeNode().GetType();
+            Type testTip2 = new PictureBox().GetType();
             _mouseDownSelekcioniProzor = Rectangle.Empty;
 
             if (e.Data.GetDataPresent(testTip))
@@ -197,10 +205,27 @@ namespace HCI_FINAL
 
                 PictureBox p = new PictureBox();
 
+                TreeNode tmp = (TreeNode)e.Data.GetData(testTip);
+
+                foreach (Rsc resurs in resursi)
+                {
+                    if (resurs.naziv.Equals(tmp.Text))
+                    {
+                        p.Name = resurs.naziv;
+                        p.Image = resurs.ikonica;
+                        break;
+                    }
+                }
+
                 p.MouseClick += new MouseEventHandler(selectImage);
-                p.Size = new Size(50, 50);
+                p.DoubleClick += new EventHandler(editFromMap);
+                p.MouseHover += new EventHandler(hover);
+                //p.MouseMove += new MouseEventHandler(move);
+                //p.MouseDown += new MouseEventHandler(down);
+                p.Size = new Size(30, 30);
                 p.SizeMode = PictureBoxSizeMode.StretchImage;
                 p.Location = panelCords;
+
                 panel1.Controls.Add(p);
                 ikonice.Add(new SerIkonica(p.Name, p.Location, p.Image)); //dodavanje u listu za serijalizaciju
             }
@@ -209,13 +234,29 @@ namespace HCI_FINAL
 
         private void selectImage(object sender, MouseEventArgs e)           //postavljanje bordera na selectovani picturebox
         {
-            foreach (PictureBox p in panel1.Controls)
+            if (e.Button == MouseButtons.Left)
             {
-                p.BorderStyle = BorderStyle.None;
-            }
+                foreach (PictureBox p in panel1.Controls)
+                {
+                    p.BorderStyle = BorderStyle.None;
+                }
 
-            selectedPB = (PictureBox)sender;
-            ((PictureBox)sender).BorderStyle = BorderStyle.FixedSingle;
+                selectedPB = (PictureBox)sender;    
+                ((PictureBox)sender).BorderStyle = BorderStyle.FixedSingle;
+            }
+            else
+            {
+                foreach (Rsc resurs in resursi)
+                {
+                    if (((PictureBox)sender).Name.Equals(resurs.naziv))
+                    {
+                        Izmena izm = new Izmena(tipovi, resurs, new Tabela(resursi, tipovi, this));
+                        izm.Show();
+                        break;
+                    }
+                }
+
+            }
         }
 
         private void tmpToolStripMenuItem_Click(object sender, EventArgs e)             //brisanje ikonica sa mape
@@ -235,8 +276,69 @@ namespace HCI_FINAL
             }
         }
 
+        private void editFromMap(object sender, EventArgs e)
+        {
+            foreach (Rsc resurs in resursi)
+            {
+                if (((PictureBox)sender).Name.Equals(resurs.naziv))
+                {
+                    Izmena izm = new Izmena(tipovi, resurs, new Tabela(resursi, tipovi, this));
+                    izm.Show();
+                    break;
+                }
+            }
+        }
+
+        private void hover(object sender, EventArgs e)
+        {
 
 
+        }
 
+        public void reloadForm()
+        {
+            stablo.Nodes.Clear();
+            stablo.Nodes.Add("resursi");
+            foreach (Rsc resurs in resursi)
+            {
+                stablo.Nodes[0].Nodes.Add(resurs.naziv);
+            }
+
+        }
+
+        public void removePB(Rsc resurs)                                //IZMENITI NUBOVSKI KOD
+        {
+            List<PictureBox> tmp = new List<PictureBox>();
+
+            foreach (PictureBox pb in panel1.Controls)
+            {
+                if (pb.Name.Equals(resurs.naziv))
+                    tmp.Add(pb);
+            }
+
+            for (int i = tmp.Count - 1; i >= 0; i--)
+            {
+                if (tmp.ElementAt(i).Name.Equals(resurs.naziv))
+                    panel1.Controls.Remove(tmp.ElementAt(i));
+            }
+
+
+            for (int i = ikonice.Count - 1; i >= 0; i--)
+            {
+                if (ikonice.ElementAt(i).naziv.Equals(resurs.naziv))
+                    ikonice.RemoveAt(i);
+            }
+
+
+        }
+
+        public void changeImage(Rsc resurs)
+        {
+            foreach (PictureBox pb in panel1.Controls)
+            {
+                if (pb.Name.Equals(resurs.naziv))
+                    pb.Image = resurs.ikonica;
+            }
+        }
     }
 }

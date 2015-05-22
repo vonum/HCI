@@ -15,12 +15,14 @@ namespace HCI_FINAL
         public List<TR> tipovi;
         public List<Et> etikete;
         public List<Rsc> resursi;
+        public Form1 form;
 
-        public Resurs(List<TR> tipovi, List<Et> etikete, List<Rsc> resursi)
+        public Resurs(List<TR> tipovi, List<Et> etikete, List<Rsc> resursi, Form1 form)
         {
             this.tipovi = tipovi;
             this.etikete = etikete;
             this.resursi = resursi;
+            this.form = form;
             InitializeComponent();
         }
 
@@ -120,6 +122,8 @@ namespace HCI_FINAL
             }
 
             resursi.Add(resurs);
+
+            form.reloadForm();
 
             this.Close();
 

@@ -15,6 +15,7 @@ namespace HCI_FINAL
         public Rsc resurs;
         public List<TR> tipovi;
         public Tabela table;
+        public Form1 form;
 
         public Izmena(List<TR> tipovi, Rsc resurs, Tabela table)
         {
@@ -112,6 +113,7 @@ namespace HCI_FINAL
             }
 
             table.refresh();
+            //form.changeImage(resurs);
 
             this.Close();
         }

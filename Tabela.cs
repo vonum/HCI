@@ -13,12 +13,14 @@ namespace HCI_FINAL
     {
         public List<Rsc> resursi;
         public List<TR> tipovi;
+        public Form1 form;
 
-        public Tabela(List<Rsc> resursi, List<TR> tipovi)
+        public Tabela(List<Rsc> resursi, List<TR> tipovi, Form1 form)
         {
             InitializeComponent();
             this.resursi = resursi;
             this.tipovi = tipovi;
+            this.form = form;
         }
 
         private void Tabela_Load(object sender, EventArgs e)
@@ -60,12 +62,20 @@ namespace HCI_FINAL
             {
                 Izmena izm = new Izmena(tipovi, resursi.ElementAt(table.CurrentRow.Index), this);
                 izm.Show(); 
+                
             }
             else
                 if (e.ColumnIndex == 7)
                 {
+
+                    Rsc tmp = resursi.ElementAt(table.CurrentRow.Index);
+
+                    //String naziv = resursi.ElementAt(table.CurrentRow.Index).naziv;
                     resursi.RemoveAt(table.CurrentRow.Index);
                     table.Rows.Remove(table.Rows[table.CurrentRow.Index]);
+
+                    form.removePB(tmp);
+                    form.reloadForm();
                 }
                 else
                 {

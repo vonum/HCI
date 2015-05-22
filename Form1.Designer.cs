@@ -42,10 +42,10 @@
             this.etiketeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pretragaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sacuvajToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tmpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stablo = new System.Windows.Forms.TreeView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
-            this.tmpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -139,6 +139,13 @@
             this.sacuvajToolStripMenuItem.Text = "Sacuvaj";
             this.sacuvajToolStripMenuItem.Click += new System.EventHandler(this.sacuvajToolStripMenuItem_Click);
             // 
+            // tmpToolStripMenuItem
+            // 
+            this.tmpToolStripMenuItem.Name = "tmpToolStripMenuItem";
+            this.tmpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.tmpToolStripMenuItem.Text = "Tmp";
+            this.tmpToolStripMenuItem.Click += new System.EventHandler(this.tmpToolStripMenuItem_Click);
+            // 
             // stablo
             // 
             this.stablo.ImageIndex = 0;
@@ -172,13 +179,6 @@
             this.panel1.TabIndex = 2;
             this.panel1.DragDrop += new System.Windows.Forms.DragEventHandler(this.panel1_DragDrop);
             this.panel1.DragEnter += new System.Windows.Forms.DragEventHandler(this.panel1_DragEnter);
-            // 
-            // tmpToolStripMenuItem
-            // 
-            this.tmpToolStripMenuItem.Name = "tmpToolStripMenuItem";
-            this.tmpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.tmpToolStripMenuItem.Text = "Tmp";
-            this.tmpToolStripMenuItem.Click += new System.EventHandler(this.tmpToolStripMenuItem_Click);
             // 
             // Form1
             // 
