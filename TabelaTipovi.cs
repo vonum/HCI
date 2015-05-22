@@ -44,7 +44,7 @@ namespace HCI_FINAL
             }
             else if (e.ColumnIndex == 3)
             {
-                IzmenaTip izmtip = new IzmenaTip(tipovi.ElementAt(table.CurrentRow.Index), this);
+                IzmenaTip izmtip = new IzmenaTip(tipovi.ElementAt(table.CurrentRow.Index), this, resursi);
                 izmtip.Show();
             }
         }

@@ -71,9 +71,10 @@
             // 
             // opis_tb
             // 
+            this.opis_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.opis_tb.Location = new System.Drawing.Point(161, 57);
             this.opis_tb.Name = "opis_tb";
-            this.opis_tb.Size = new System.Drawing.Size(84, 23);
+            this.opis_tb.Size = new System.Drawing.Size(84, 20);
             this.opis_tb.TabIndex = 5;
             // 
             // oznaka_tb

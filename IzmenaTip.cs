@@ -14,13 +14,15 @@ namespace HCI_FINAL
         public TR tr;
         public System.Drawing.Image img;
         public TabelaTipovi tt;
+        public List<Rsc> resursi;
 
-        public IzmenaTip(TR tr, TabelaTipovi tt)
+        public IzmenaTip(TR tr, TabelaTipovi tt, List<Rsc> resursi)
         {
             InitializeComponent();
             this.tr = tr;
             img = tr.ikonica;
             this.tt = tt;
+            this.resursi = resursi;
         }
             
         private void button1_Click(object sender, EventArgs e)                  //povratak
@@ -30,10 +32,18 @@ namespace HCI_FINAL
 
         private void button2_Click(object sender, EventArgs e)                  //izmena
         {
+            String tmp = tr.naziv;
+
             tr.ikonica = img;
             tr.naziv = naziv_tb.Text;
             tr.opis = opis_tb.Text;
             tr.oznaka = oznaka_tb.Text;
+
+            foreach (Rsc resurs in resursi)
+            {
+                if (resurs.tip.naziv.Equals(tmp))
+                    resurs.tip = tr;
+            }
 
             tt.refresh();
 

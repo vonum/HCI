@@ -24,6 +24,7 @@ namespace HCI_FINAL
         private Point _ofsetEkrana;
         private TreeNode _indeksPrevucenogCvora;
         private Point pos;
+        private bool isSelected;
 
         public Form1()
         {
@@ -31,6 +32,7 @@ namespace HCI_FINAL
             tipovi = new List<TR>();
             resursi = new List<Rsc>();
             ikonice = new List<SerIkonica>();
+            isSelected = false;
             InitializeComponent();
             //komentar
 
@@ -140,8 +142,9 @@ namespace HCI_FINAL
                 p.MouseClick += new MouseEventHandler(selectImage);
                 p.MouseHover += new EventHandler(hover);
                 p.SizeMode = PictureBoxSizeMode.StretchImage;
-                //p.MouseMove += new MouseEventHandler(move);
-                //p.MouseDown += new MouseEventHandler(down);
+                p.MouseMove += new MouseEventHandler(move);
+                p.MouseDown += new MouseEventHandler(down);
+                p.MouseUp += new MouseEventHandler(up);
                 this.panel1.Controls.Add(p); 
             }
         }
@@ -220,8 +223,9 @@ namespace HCI_FINAL
                 p.MouseClick += new MouseEventHandler(selectImage);
                 p.DoubleClick += new EventHandler(editFromMap);
                 p.MouseHover += new EventHandler(hover);
-                //p.MouseMove += new MouseEventHandler(move);
-                //p.MouseDown += new MouseEventHandler(down);
+                p.MouseMove += new MouseEventHandler(move);
+                p.MouseDown += new MouseEventHandler(down);
+                p.MouseUp += new MouseEventHandler(up);
                 p.Size = new Size(30, 30);
                 p.SizeMode = PictureBoxSizeMode.StretchImage;
                 p.Location = panelCords;
@@ -287,6 +291,31 @@ namespace HCI_FINAL
                     break;
                 }
             }
+        }
+
+        private void down(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left)
+                return;
+            isSelected = true;
+            pos.X = e.X;
+            pos.Y = e.Y;
+        }
+
+        private void move(object sender, MouseEventArgs e)
+        {
+            if (isSelected)
+            {
+                //((PictureBox)sender).Location = e.Location;
+                ((PictureBox)sender).Top = e.Y + ((PictureBox)sender).Top - pos.Y;
+                ((PictureBox)sender).Left = e.X + ((PictureBox)sender).Left - pos.X;
+                
+            }
+        }
+
+        private void up(object sender, MouseEventArgs e)
+        {
+            isSelected = false;
         }
 
         private void hover(object sender, EventArgs e)
