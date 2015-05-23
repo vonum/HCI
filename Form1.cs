@@ -313,9 +313,19 @@ namespace HCI_FINAL
             }
         }
 
-        private void up(object sender, MouseEventArgs e)
+        private void up(object sender, MouseEventArgs e)            //NUBOVSKI
         {
             isSelected = false;
+
+            List<PictureBox> tmp = new List<PictureBox>();
+
+            foreach (PictureBox pb in panel1.Controls)
+            {
+                tmp.Add(pb);
+            }
+
+            int idx = tmp.IndexOf((PictureBox)sender);
+            ikonice.ElementAt(idx).lokacija = ((PictureBox)sender).Location;
         }
 
         private void hover(object sender, EventArgs e)
