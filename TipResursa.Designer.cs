@@ -28,20 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.naziv_tb = new System.Windows.Forms.TextBox();
-            this.opis_tb = new System.Windows.Forms.TextBox();
-            this.oznaka_tb = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
+            this.oznaka_tb = new System.Windows.Forms.TextBox();
+            this.opis_tb = new System.Windows.Forms.TextBox();
+            this.naziv_tb = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.trep = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trep)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -62,35 +65,43 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tip Resursa";
             // 
-            // label1
+            // button3
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(34, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(37, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Naziv:";
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(207, 132);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 7;
+            this.button3.Text = "Izaberi";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // label2
+            // oznaka_tb
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(34, 63);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(31, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Opis:";
+            this.oznaka_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.oznaka_tb.Location = new System.Drawing.Point(200, 97);
+            this.oznaka_tb.Name = "oznaka_tb";
+            this.oznaka_tb.Size = new System.Drawing.Size(92, 20);
+            this.oznaka_tb.TabIndex = 6;
+            this.oznaka_tb.Validating += new System.ComponentModel.CancelEventHandler(this.oznaka_tb_Validating);
             // 
-            // label3
+            // opis_tb
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(34, 97);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(47, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Oznaka:";
+            this.opis_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.opis_tb.Location = new System.Drawing.Point(200, 63);
+            this.opis_tb.Name = "opis_tb";
+            this.opis_tb.Size = new System.Drawing.Size(92, 20);
+            this.opis_tb.TabIndex = 5;
+            this.opis_tb.Validating += new System.ComponentModel.CancelEventHandler(this.opis_tb_Validating);
+            // 
+            // naziv_tb
+            // 
+            this.naziv_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.naziv_tb.Location = new System.Drawing.Point(200, 33);
+            this.naziv_tb.Name = "naziv_tb";
+            this.naziv_tb.Size = new System.Drawing.Size(92, 20);
+            this.naziv_tb.TabIndex = 4;
+            this.naziv_tb.Validating += new System.ComponentModel.CancelEventHandler(this.naziv_tb_Validating);
             // 
             // label4
             // 
@@ -102,6 +113,36 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Ikonica:";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(34, 97);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(47, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Oznaka:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(34, 63);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(31, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Opis:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(34, 33);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(37, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Naziv:";
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.button2);
@@ -111,16 +152,6 @@
             this.groupBox2.Size = new System.Drawing.Size(324, 68);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(45, 22);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(102, 27);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Povratak";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -132,40 +163,19 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // naziv_tb
+            // button1
             // 
-            this.naziv_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.naziv_tb.Location = new System.Drawing.Point(200, 33);
-            this.naziv_tb.Name = "naziv_tb";
-            this.naziv_tb.Size = new System.Drawing.Size(92, 20);
-            this.naziv_tb.TabIndex = 4;
+            this.button1.Location = new System.Drawing.Point(45, 22);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(102, 27);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Povratak";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // opis_tb
+            // trep
             // 
-            this.opis_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.opis_tb.Location = new System.Drawing.Point(200, 63);
-            this.opis_tb.Name = "opis_tb";
-            this.opis_tb.Size = new System.Drawing.Size(92, 20);
-            this.opis_tb.TabIndex = 5;
-            // 
-            // oznaka_tb
-            // 
-            this.oznaka_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.oznaka_tb.Location = new System.Drawing.Point(200, 97);
-            this.oznaka_tb.Name = "oznaka_tb";
-            this.oznaka_tb.Size = new System.Drawing.Size(92, 20);
-            this.oznaka_tb.TabIndex = 6;
-            // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(207, 132);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "Izaberi";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.trep.ContainerControl = this;
             // 
             // TipResursa
             // 
@@ -180,6 +190,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.trep)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -198,5 +209,6 @@
         private System.Windows.Forms.TextBox opis_tb;
         private System.Windows.Forms.TextBox naziv_tb;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ErrorProvider trep;
     }
 }

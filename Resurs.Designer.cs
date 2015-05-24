@@ -32,6 +32,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.opodaci_gb = new System.Windows.Forms.GroupBox();
+            this.etikete_cb = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.tip_cb = new System.Windows.Forms.ComboBox();
@@ -93,6 +94,7 @@
             // 
             // opodaci_gb
             // 
+            this.opodaci_gb.Controls.Add(this.etikete_cb);
             this.opodaci_gb.Controls.Add(this.label12);
             this.opodaci_gb.Controls.Add(this.button3);
             this.opodaci_gb.Controls.Add(this.tip_cb);
@@ -111,6 +113,17 @@
             this.opodaci_gb.TabIndex = 5;
             this.opodaci_gb.TabStop = false;
             this.opodaci_gb.Text = "Osnovni Podaci";
+            // 
+            // etikete_cb
+            // 
+            this.etikete_cb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.etikete_cb.FormattingEnabled = true;
+            this.etikete_cb.Location = new System.Drawing.Point(116, 138);
+            this.etikete_cb.Name = "etikete_cb";
+            this.etikete_cb.Size = new System.Drawing.Size(114, 24);
+            this.etikete_cb.TabIndex = 13;
+            this.etikete_cb.DropDown += new System.EventHandler(this.etikete_cb_DropDown);
+            this.etikete_cb.DropDownClosed += new System.EventHandler(this.etikete_cb_DropDownClosed);
             // 
             // label12
             // 
@@ -427,5 +440,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox cena_tb;
+        private System.Windows.Forms.ComboBox etikete_cb;
     }
 }

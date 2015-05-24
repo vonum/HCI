@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.etiketa_gb = new System.Windows.Forms.GroupBox();
             this.button3 = new System.Windows.Forms.Button();
             this.opis_tb = new System.Windows.Forms.TextBox();
@@ -38,8 +39,10 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.eep = new System.Windows.Forms.ErrorProvider(this.components);
             this.etiketa_gb.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.eep)).BeginInit();
             this.SuspendLayout();
             // 
             // etiketa_gb
@@ -76,6 +79,7 @@
             this.opis_tb.Name = "opis_tb";
             this.opis_tb.Size = new System.Drawing.Size(84, 20);
             this.opis_tb.TabIndex = 5;
+            this.opis_tb.Validating += new System.ComponentModel.CancelEventHandler(this.opis_tb_Validating);
             // 
             // oznaka_tb
             // 
@@ -84,6 +88,7 @@
             this.oznaka_tb.Name = "oznaka_tb";
             this.oznaka_tb.Size = new System.Drawing.Size(84, 20);
             this.oznaka_tb.TabIndex = 3;
+            this.oznaka_tb.Validating += new System.ComponentModel.CancelEventHandler(this.oznaka_tb_Validating);
             // 
             // label3
             // 
@@ -145,6 +150,10 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // eep
+            // 
+            this.eep.ContainerControl = this;
+            // 
             // Etiketa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -158,6 +167,7 @@
             this.etiketa_gb.ResumeLayout(false);
             this.etiketa_gb.PerformLayout();
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.eep)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -174,5 +184,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox opis_tb;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ErrorProvider eep;
     }
 }

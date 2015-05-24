@@ -34,8 +34,12 @@ namespace HCI_FINAL
 
                 foreach (Rsc resurs in resursi)
                 {
-                    if (resurs.tip == tip)
+                    if (resurs.tip.naziv.Equals(tip.naziv))
+                    //if(resurs.tip == tip)
+                    {
+                        MessageBox.Show("Nije moguce izvrsiti operaciju, jer postoji resurs tog tipa");
                         return;
+                    }
                 }
 
 

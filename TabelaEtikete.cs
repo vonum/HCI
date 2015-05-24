@@ -35,7 +35,10 @@ namespace HCI_FINAL
                 foreach (Rsc resurs in resursi)
                 {
                     if (resurs.etikete.Contains(et))
+                    {
+                        MessageBox.Show("Nije moguce izvrsiti operaciju, jer postoji resurs koji poseduje etiketu");
                         return;
+                    }
                 }
 
                 etikete.RemoveAt(table.CurrentRow.Index);

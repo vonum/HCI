@@ -19,6 +19,7 @@ namespace HCI_FINAL
 
         public Resurs(List<TR> tipovi, List<Et> etikete, List<Rsc> resursi, Form1 form)
         {
+            this.img = null;
             this.tipovi = tipovi;
             this.etikete = etikete;
             this.resursi = resursi;
@@ -39,6 +40,11 @@ namespace HCI_FINAL
             {
                 tip_cb.Items.Add(tr.naziv);
             }
+
+            foreach (Et et in etikete)
+            {
+            }
+
         }
 
         private void button3_Click(object sender, EventArgs e)                  //biranje ikonica****************/
@@ -121,11 +127,24 @@ namespace HCI_FINAL
                 }
             }
 
+            if (resurs.ikonica == null)
+                resurs.ikonica = resurs.tip.ikonica;
+
             resursi.Add(resurs);
 
             form.reloadForm();
 
             this.Close();
+
+        }
+
+        private void etikete_cb_DropDown(object sender, EventArgs e)
+        {
+
+        }
+
+        private void etikete_cb_DropDownClosed(object sender, EventArgs e)
+        {
 
         }
 
