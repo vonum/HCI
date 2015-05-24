@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.opodaci_gb = new System.Windows.Forms.GroupBox();
-            this.etikete_cb = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.tip_cb = new System.Windows.Forms.ComboBox();
@@ -57,9 +57,11 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rep = new System.Windows.Forms.ErrorProvider(this.components);
             this.opodaci_gb.SuspendLayout();
             this.dpodaci_gb.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rep)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -94,7 +96,6 @@
             // 
             // opodaci_gb
             // 
-            this.opodaci_gb.Controls.Add(this.etikete_cb);
             this.opodaci_gb.Controls.Add(this.label12);
             this.opodaci_gb.Controls.Add(this.button3);
             this.opodaci_gb.Controls.Add(this.tip_cb);
@@ -113,17 +114,6 @@
             this.opodaci_gb.TabIndex = 5;
             this.opodaci_gb.TabStop = false;
             this.opodaci_gb.Text = "Osnovni Podaci";
-            // 
-            // etikete_cb
-            // 
-            this.etikete_cb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.etikete_cb.FormattingEnabled = true;
-            this.etikete_cb.Location = new System.Drawing.Point(116, 138);
-            this.etikete_cb.Name = "etikete_cb";
-            this.etikete_cb.Size = new System.Drawing.Size(114, 24);
-            this.etikete_cb.TabIndex = 13;
-            this.etikete_cb.DropDown += new System.EventHandler(this.etikete_cb_DropDown);
-            this.etikete_cb.DropDownClosed += new System.EventHandler(this.etikete_cb_DropDownClosed);
             // 
             // label12
             // 
@@ -155,6 +145,7 @@
             this.tip_cb.Name = "tip_cb";
             this.tip_cb.Size = new System.Drawing.Size(114, 21);
             this.tip_cb.TabIndex = 10;
+            this.tip_cb.Validating += new System.ComponentModel.CancelEventHandler(this.tip_cb_Validating);
             // 
             // opis_tb
             // 
@@ -163,6 +154,7 @@
             this.opis_tb.Name = "opis_tb";
             this.opis_tb.Size = new System.Drawing.Size(114, 20);
             this.opis_tb.TabIndex = 9;
+            this.opis_tb.Validating += new System.ComponentModel.CancelEventHandler(this.opis_tb_Validating);
             // 
             // naziv_tb
             // 
@@ -171,6 +163,7 @@
             this.naziv_tb.Name = "naziv_tb";
             this.naziv_tb.Size = new System.Drawing.Size(114, 20);
             this.naziv_tb.TabIndex = 8;
+            this.naziv_tb.Validating += new System.ComponentModel.CancelEventHandler(this.naziv_tb_Validating);
             // 
             // oznaka_tb
             // 
@@ -179,6 +172,7 @@
             this.oznaka_tb.Name = "oznaka_tb";
             this.oznaka_tb.Size = new System.Drawing.Size(114, 20);
             this.oznaka_tb.TabIndex = 7;
+            this.oznaka_tb.Validating += new System.ComponentModel.CancelEventHandler(this.oznaka_tb_Validating);
             // 
             // label3
             // 
@@ -230,6 +224,7 @@
             this.cena_tb.Name = "cena_tb";
             this.cena_tb.Size = new System.Drawing.Size(89, 20);
             this.cena_tb.TabIndex = 12;
+            this.cena_tb.Validating += new System.ComponentModel.CancelEventHandler(this.cena_tb_Validating);
             // 
             // frekv_cb
             // 
@@ -244,6 +239,7 @@
             this.frekv_cb.Name = "frekv_cb";
             this.frekv_cb.Size = new System.Drawing.Size(89, 21);
             this.frekv_cb.TabIndex = 11;
+            this.frekv_cb.Validating += new System.ComponentModel.CancelEventHandler(this.frekv_cb_Validating);
             // 
             // jm_cb
             // 
@@ -259,6 +255,7 @@
             this.jm_cb.Name = "jm_cb";
             this.jm_cb.Size = new System.Drawing.Size(89, 21);
             this.jm_cb.TabIndex = 9;
+            this.jm_cb.Validating += new System.ComponentModel.CancelEventHandler(this.jm_cb_Validating);
             // 
             // ekspl_cb
             // 
@@ -272,6 +269,7 @@
             this.ekspl_cb.Name = "ekspl_cb";
             this.ekspl_cb.Size = new System.Drawing.Size(89, 21);
             this.ekspl_cb.TabIndex = 8;
+            this.ekspl_cb.Validating += new System.ComponentModel.CancelEventHandler(this.ekspl_cb_Validating);
             // 
             // strv_cb
             // 
@@ -285,6 +283,7 @@
             this.strv_cb.Name = "strv_cb";
             this.strv_cb.Size = new System.Drawing.Size(89, 21);
             this.strv_cb.TabIndex = 7;
+            this.strv_cb.Validating += new System.ComponentModel.CancelEventHandler(this.strv_cb_Validating);
             // 
             // obn_cb
             // 
@@ -298,6 +297,7 @@
             this.obn_cb.Name = "obn_cb";
             this.obn_cb.Size = new System.Drawing.Size(89, 21);
             this.obn_cb.TabIndex = 6;
+            this.obn_cb.Validating += new System.ComponentModel.CancelEventHandler(this.obn_cb_Validating);
             // 
             // label11
             // 
@@ -390,6 +390,10 @@
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             // 
+            // rep
+            // 
+            this.rep.ContainerControl = this;
+            // 
             // Resurs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -406,6 +410,7 @@
             this.dpodaci_gb.ResumeLayout(false);
             this.dpodaci_gb.PerformLayout();
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.rep)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -440,6 +445,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox cena_tb;
-        private System.Windows.Forms.ComboBox etikete_cb;
+        private System.Windows.Forms.ErrorProvider rep;
     }
 }
