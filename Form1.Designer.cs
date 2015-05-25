@@ -40,7 +40,6 @@
             this.resursiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tipoviResursaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.etiketeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pretragaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sacuvajToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tmpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stablo = new System.Windows.Forms.TreeView();
@@ -54,7 +53,6 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dodajToolStripMenuItem,
             this.tabelaToolStripMenuItem,
-            this.pretragaToolStripMenuItem,
             this.sacuvajToolStripMenuItem,
             this.tmpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -125,12 +123,6 @@
             this.etiketeToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.etiketeToolStripMenuItem.Text = "Etikete";
             this.etiketeToolStripMenuItem.Click += new System.EventHandler(this.etiketeToolStripMenuItem_Click);
-            // 
-            // pretragaToolStripMenuItem
-            // 
-            this.pretragaToolStripMenuItem.Name = "pretragaToolStripMenuItem";
-            this.pretragaToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
-            this.pretragaToolStripMenuItem.Text = "Pretraga";
             // 
             // sacuvajToolStripMenuItem
             // 
@@ -206,7 +198,6 @@
         private System.Windows.Forms.ToolStripMenuItem tipResursaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem etiketaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tabelaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem pretragaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sacuvajToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem resursiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tipoviResursaToolStripMenuItem;
