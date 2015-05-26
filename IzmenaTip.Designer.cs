@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -40,8 +41,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.ep = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ep)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -110,6 +113,7 @@
             this.oznaka_tb.Name = "oznaka_tb";
             this.oznaka_tb.Size = new System.Drawing.Size(92, 20);
             this.oznaka_tb.TabIndex = 6;
+            this.oznaka_tb.Validating += new System.ComponentModel.CancelEventHandler(this.oznaka_tb_Validating);
             // 
             // opis_tb
             // 
@@ -118,6 +122,7 @@
             this.opis_tb.Name = "opis_tb";
             this.opis_tb.Size = new System.Drawing.Size(92, 20);
             this.opis_tb.TabIndex = 5;
+            this.opis_tb.Validating += new System.ComponentModel.CancelEventHandler(this.opis_tb_Validating);
             // 
             // naziv_tb
             // 
@@ -126,6 +131,7 @@
             this.naziv_tb.Name = "naziv_tb";
             this.naziv_tb.Size = new System.Drawing.Size(92, 20);
             this.naziv_tb.TabIndex = 4;
+            this.naziv_tb.Validating += new System.ComponentModel.CancelEventHandler(this.naziv_tb_Validating);
             // 
             // label4
             // 
@@ -167,6 +173,10 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Naziv:";
             // 
+            // ep
+            // 
+            this.ep.ContainerControl = this;
+            // 
             // IzmenaTip
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -180,6 +190,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ep)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -198,5 +209,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ErrorProvider ep;
     }
 }

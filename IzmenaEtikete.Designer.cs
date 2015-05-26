@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -38,8 +39,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.ep = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
             this.etiketa_gb.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ep)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -101,10 +104,12 @@
             // 
             // opis_tb
             // 
+            this.opis_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.opis_tb.Location = new System.Drawing.Point(161, 57);
             this.opis_tb.Name = "opis_tb";
-            this.opis_tb.Size = new System.Drawing.Size(84, 23);
+            this.opis_tb.Size = new System.Drawing.Size(84, 20);
             this.opis_tb.TabIndex = 5;
+            this.opis_tb.Validating += new System.ComponentModel.CancelEventHandler(this.opis_tb_Validating);
             // 
             // oznaka_tb
             // 
@@ -113,6 +118,7 @@
             this.oznaka_tb.Name = "oznaka_tb";
             this.oznaka_tb.Size = new System.Drawing.Size(84, 20);
             this.oznaka_tb.TabIndex = 3;
+            this.oznaka_tb.Validating += new System.ComponentModel.CancelEventHandler(this.oznaka_tb_Validating);
             // 
             // label3
             // 
@@ -144,6 +150,10 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Oznaka:";
             // 
+            // ep
+            // 
+            this.ep.ContainerControl = this;
+            // 
             // IzmenaEtikete
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -157,6 +167,7 @@
             this.groupBox1.ResumeLayout(false);
             this.etiketa_gb.ResumeLayout(false);
             this.etiketa_gb.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ep)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -173,5 +184,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ErrorProvider ep;
     }
 }

@@ -29,8 +29,8 @@ namespace HCI_FINAL
             this.resursi = resursi;
             this.form = form;
             valid = true;
-            text_rx = new System.Text.RegularExpressions.Regex("[a-z, A-Z]+$");
-            num_rx = new System.Text.RegularExpressions.Regex("[0-9]+$");
+            text_rx = new System.Text.RegularExpressions.Regex("^[a-z, A-Z]+$");
+            num_rx = new System.Text.RegularExpressions.Regex("^[0-9]+$");
             InitializeComponent();
         }
 
@@ -241,21 +241,6 @@ namespace HCI_FINAL
             }
         }
 
-        private void ekspl_cb_Validating(object sender, CancelEventArgs e)
-        {
-            if (text_rx.Match(ekspl_cb.Text).Success)
-            {
-                rep.SetError(ekspl_cb, "");
-                ekspl_cb.ForeColor = Color.Black;
-            }
-            else
-            {
-                rep.SetError(ekspl_cb, "Odredite eksploativnost resursa");
-                ekspl_cb.ForeColor = Color.Red;
-                valid = false;
-            }
-
-        }
 
         private void jm_cb_Validating(object sender, CancelEventArgs e)
         {
@@ -289,7 +274,7 @@ namespace HCI_FINAL
 
         private void frekv_cb_Validating(object sender, CancelEventArgs e)
         {
-            if (text_rx.Match(frekv_cb.Text).Success)
+            if (frekv_cb.SelectedIndex != -1)
             {
                 rep.SetError(frekv_cb, "");
                 frekv_cb.ForeColor = Color.Black;
@@ -301,6 +286,21 @@ namespace HCI_FINAL
                 valid = false;
             }
         }
+
+        private void ekspl_cb_Validating(object sender, CancelEventArgs e)
+        {
+            if (ekspl_cb.SelectedIndex != -1)
+            {
+                rep.SetError(ekspl_cb, "");
+                ekspl_cb.ForeColor = Color.Black;
+            }
+            else
+            {
+                rep.SetError(ekspl_cb, "Odredite eksploativnost");
+                ekspl_cb.ForeColor = Color.Red;
+                valid = false;
+            }
+        }   
 
     }
 }

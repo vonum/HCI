@@ -15,12 +15,18 @@ namespace HCI_FINAL
         public Et etiketa;
         public TabelaEtikete te;
 
+        private System.Text.RegularExpressions.Regex text_rx;
+        private bool valid;
+
         public IzmenaEtikete(Et etiketa, TabelaEtikete te)
         {
             InitializeComponent();
             this.etiketa = etiketa;
             color = etiketa.color;
             this.te = te;
+
+            valid = true;
+            text_rx = new System.Text.RegularExpressions.Regex("^[a-z, A-Z]+$");
         }
 
         private void button1_Click(object sender, EventArgs e)                  //povratak
@@ -30,13 +36,19 @@ namespace HCI_FINAL
 
         private void button2_Click(object sender, EventArgs e)                  //izmena
         {
-            etiketa.color = color;
-            etiketa.opis = opis_tb.Text;
-            etiketa.oznaka = oznaka_tb.Text;
+            valid = true;
+            ValidateChildren();
 
-            te.refresh();
+            if (valid)
+            {
+                etiketa.color = color;
+                etiketa.opis = opis_tb.Text;
+                etiketa.oznaka = oznaka_tb.Text;
 
-            this.Close();
+                te.refresh();
+
+                this.Close();
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)                  //biranje boja
@@ -50,6 +62,42 @@ namespace HCI_FINAL
 
             if (cd.ShowDialog() == DialogResult.OK)
                 color = cd.Color;
+        }
+
+        protected override void OnLoad(EventArgs e)
+        {
+            opis_tb.Text = etiketa.opis;
+            oznaka_tb.Text = etiketa.oznaka;
+        }
+
+        private void oznaka_tb_Validating(object sender, CancelEventArgs e)
+        {
+            if (text_rx.Match(oznaka_tb.Text).Success)
+            {
+                ep.SetError(oznaka_tb, "");
+                oznaka_tb.ForeColor = Color.Black;
+            }
+            else
+            {
+                ep.SetError(oznaka_tb, "Oznaka nije u odgovarajucem formatu");
+                oznaka_tb.ForeColor = Color.Red;
+                valid = false;
+            }
+        }
+
+        private void opis_tb_Validating(object sender, CancelEventArgs e)
+        {
+            if (text_rx.Match(opis_tb.Text).Success)
+            {
+                ep.SetError(opis_tb, "");
+                opis_tb.ForeColor = Color.Black;
+            }
+            else
+            {
+                ep.SetError(opis_tb, "Opis nije u odgovarajucem formatu");
+                opis_tb.ForeColor = Color.Red;
+                valid = false;
+            }
         }
     }
 }

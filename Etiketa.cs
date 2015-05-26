@@ -22,7 +22,7 @@ namespace HCI_FINAL
             InitializeComponent();
             color = Color.Aqua;
             this.etikete = etikete;
-            text_rx = new System.Text.RegularExpressions.Regex("[a-z, A-Z]+$");
+            text_rx = new System.Text.RegularExpressions.Regex("^[a-z, A-Z]+$");
             valid = true;
         }
 
