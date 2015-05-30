@@ -41,13 +41,27 @@ namespace HCI_FINAL
 
             if (valid)
             {
-                etiketa.color = color;
-                etiketa.opis = opis_tb.Text;
-                etiketa.oznaka = oznaka_tb.Text;
+                bool tmp = true;
+                foreach (Et et in te.etikete)
+                {
+                    if (et.oznaka.Equals(oznaka_tb.Text))
+                    {
+                        tmp = false;
+                        MessageBox.Show("Postoji etiketa sa unetom oznakom");
+                        break;
+                    }
 
-                te.refresh();
+                }
+                if (tmp)
+                {
+                    etiketa.color = color;
+                    etiketa.opis = opis_tb.Text;
+                    etiketa.oznaka = oznaka_tb.Text;
 
-                this.Close();
+                    te.refresh();
+
+                    this.Close();
+                }
             }
         }
 

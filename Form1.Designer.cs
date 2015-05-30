@@ -151,6 +151,7 @@
             this.stablo.SelectedImageIndex = 0;
             this.stablo.Size = new System.Drawing.Size(121, 609);
             this.stablo.TabIndex = 1;
+            this.stablo.MouseClick += new System.Windows.Forms.MouseEventHandler(this.stablo_MouseClick);
             this.stablo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.stablo_MouseDown);
             this.stablo.MouseMove += new System.Windows.Forms.MouseEventHandler(this.stablo_MouseMove);
             // 

@@ -246,7 +246,7 @@ namespace HCI_FINAL
                 }
 
                 selectedPB = (PictureBox)sender;    
-                ((PictureBox)sender).BorderStyle = BorderStyle.FixedSingle;
+                ((PictureBox)sender).BorderStyle = BorderStyle.Fixed3D;
             }
             else
             {
@@ -261,6 +261,13 @@ namespace HCI_FINAL
                 }
 
             }
+
+            foreach (TreeNode node in stablo.Nodes[0].Nodes)
+            {
+                if (((PictureBox)sender).Name.Equals(node.Text))
+                    stablo.SelectedNode = node;
+            }
+
         }
 
         private void tmpToolStripMenuItem_Click(object sender, EventArgs e)             //brisanje ikonica sa mape
@@ -388,6 +395,26 @@ namespace HCI_FINAL
                 cp.ExStyle |= 0x02000000;  // Turn on WS_EX_COMPOSITED
                 return cp;
             }
+        }
+
+        private void stablo_MouseClick(object sender, MouseEventArgs e)
+        {
+           TreeNode sel = stablo.GetNodeAt(e.Location);
+           if (sel != null)
+           {
+               stablo.SelectedNode = sel;
+               foreach (PictureBox pb in panel1.Controls)
+               {
+                   if (pb.Name.Equals(sel.Text))
+                   {
+                       pb.BorderStyle = BorderStyle.Fixed3D;
+                   }
+                   else
+                   {
+                       pb.BorderStyle = BorderStyle.None;
+                   }
+               }
+           }
         }
 
     }

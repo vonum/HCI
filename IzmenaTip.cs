@@ -43,22 +43,36 @@ namespace HCI_FINAL
 
             if (valid)
             {
-                String tmp = tr.naziv;
+                bool tmp1 = true;
 
-                tr.ikonica = img;
-                tr.naziv = naziv_tb.Text;
-                tr.opis = opis_tb.Text;
-                tr.oznaka = oznaka_tb.Text;
-
-                foreach (Rsc resurs in resursi)
+                foreach (TR tip in tt.tipovi)
                 {
-                    if (resurs.tip.naziv.Equals(tmp))
-                        resurs.tip = tr;
+                    if (tip.oznaka.Equals(oznaka_tb.Text) || tip.naziv.Equals(naziv_tb.Text))
+                    {
+                        tmp1 = false;
+                        MessageBox.Show("Postoji tip sa unetim nazivom ili oznakom");
+                        break;
+                    }
                 }
+                if (tmp1)
+                {
+                    String tmp = tr.naziv;
 
-                tt.refresh();
+                    tr.ikonica = img;
+                    tr.naziv = naziv_tb.Text;
+                    tr.opis = opis_tb.Text;
+                    tr.oznaka = oznaka_tb.Text;
 
-                this.Close();
+                    foreach (Rsc resurs in resursi)
+                    {
+                        if (resurs.tip.naziv.Equals(tmp))
+                            resurs.tip = tr;
+                    }
+
+                    tt.refresh();
+
+                    this.Close();
+                }
             }
         }
 
