@@ -417,5 +417,30 @@ namespace HCI_FINAL
            }
         }
 
+        private void Form1_Activated(object sender, EventArgs e)
+        {
+            reloadForm();
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)                   //autosave
+        {
+            Stream stream = File.Open("etikete.bin", FileMode.Create);
+            BinaryFormatter bin = new BinaryFormatter();
+            bin.Serialize(stream, etikete);
+            stream.Close();
+
+            stream = File.Open("tipovi.bin", FileMode.Create);
+            bin.Serialize(stream, tipovi);
+            stream.Close();
+
+            stream = File.Open("resursi.bin", FileMode.Create);
+            bin.Serialize(stream, resursi);
+            stream.Close();
+
+            stream = File.Open("ikonice.bin", FileMode.Create);
+            bin.Serialize(stream, ikonice);
+            stream.Close();
+        }
+
     }
 }

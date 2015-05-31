@@ -198,7 +198,7 @@ namespace HCI_FINAL
 
         private void tip_cb_Validating(object sender, CancelEventArgs e)
         {
-            if (text_rx.Match(tip_cb.Text).Success)
+            if (tip_cb.SelectedIndex != -1)
             {
                 rep.SetError(tip_cb, "");
                 tip_cb.ForeColor = Color.Black;
@@ -213,7 +213,7 @@ namespace HCI_FINAL
 
         private void obn_cb_Validating(object sender, CancelEventArgs e)
         {
-            if (text_rx.Match(obn_cb.Text).Success)
+            if (obn_cb.SelectedIndex != -1)
             {
                 rep.SetError(obn_cb, "");
                 obn_cb.ForeColor = Color.Black;
@@ -228,7 +228,7 @@ namespace HCI_FINAL
 
         private void strv_cb_Validating(object sender, CancelEventArgs e)
         {
-            if (text_rx.Match(strv_cb.Text).Success)
+            if (strv_cb.SelectedIndex != -1)
             {
                 rep.SetError(strv_cb, "");
                 strv_cb.ForeColor = Color.Black;
@@ -244,7 +244,7 @@ namespace HCI_FINAL
 
         private void jm_cb_Validating(object sender, CancelEventArgs e)
         {
-            if (text_rx.Match(jm_cb.Text).Success)
+            if (jm_cb.SelectedIndex != -1)
             {
                 rep.SetError(jm_cb, "");
                 jm_cb.ForeColor = Color.Black;

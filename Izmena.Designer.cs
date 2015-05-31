@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -56,9 +57,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.ep = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
             this.dpodaci_gb.SuspendLayout();
             this.opodaci_gb.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ep)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -121,6 +124,7 @@
             this.cena_tb.Name = "cena_tb";
             this.cena_tb.Size = new System.Drawing.Size(89, 20);
             this.cena_tb.TabIndex = 12;
+            this.cena_tb.Validating += new System.ComponentModel.CancelEventHandler(this.cena_tb_Validating);
             // 
             // frekv_cb
             // 
@@ -135,6 +139,7 @@
             this.frekv_cb.Name = "frekv_cb";
             this.frekv_cb.Size = new System.Drawing.Size(89, 21);
             this.frekv_cb.TabIndex = 11;
+            this.frekv_cb.Validating += new System.ComponentModel.CancelEventHandler(this.frekv_cb_Validating);
             // 
             // jm_cb
             // 
@@ -150,6 +155,7 @@
             this.jm_cb.Name = "jm_cb";
             this.jm_cb.Size = new System.Drawing.Size(89, 21);
             this.jm_cb.TabIndex = 9;
+            this.jm_cb.Validating += new System.ComponentModel.CancelEventHandler(this.jm_cb_Validating);
             // 
             // ekspl_cb
             // 
@@ -163,6 +169,7 @@
             this.ekspl_cb.Name = "ekspl_cb";
             this.ekspl_cb.Size = new System.Drawing.Size(89, 21);
             this.ekspl_cb.TabIndex = 8;
+            this.ekspl_cb.Validating += new System.ComponentModel.CancelEventHandler(this.ekspl_cb_Validating);
             // 
             // strv_cb
             // 
@@ -176,6 +183,7 @@
             this.strv_cb.Name = "strv_cb";
             this.strv_cb.Size = new System.Drawing.Size(89, 21);
             this.strv_cb.TabIndex = 7;
+            this.strv_cb.Validating += new System.ComponentModel.CancelEventHandler(this.strv_cb_Validating);
             // 
             // obn_cb
             // 
@@ -189,6 +197,7 @@
             this.obn_cb.Name = "obn_cb";
             this.obn_cb.Size = new System.Drawing.Size(89, 21);
             this.obn_cb.TabIndex = 6;
+            this.obn_cb.Validating += new System.ComponentModel.CancelEventHandler(this.obn_cb_Validating);
             // 
             // label11
             // 
@@ -301,6 +310,7 @@
             this.tip_cb.Name = "tip_cb";
             this.tip_cb.Size = new System.Drawing.Size(114, 21);
             this.tip_cb.TabIndex = 10;
+            this.tip_cb.Validating += new System.ComponentModel.CancelEventHandler(this.tip_cb_Validating);
             // 
             // opis_tb
             // 
@@ -309,6 +319,7 @@
             this.opis_tb.Name = "opis_tb";
             this.opis_tb.Size = new System.Drawing.Size(114, 20);
             this.opis_tb.TabIndex = 9;
+            this.opis_tb.Validating += new System.ComponentModel.CancelEventHandler(this.opis_tb_Validating);
             // 
             // naziv_tb
             // 
@@ -317,6 +328,7 @@
             this.naziv_tb.Name = "naziv_tb";
             this.naziv_tb.Size = new System.Drawing.Size(114, 20);
             this.naziv_tb.TabIndex = 8;
+            this.naziv_tb.Validating += new System.ComponentModel.CancelEventHandler(this.naziv_tb_Validating);
             // 
             // oznaka_tb
             // 
@@ -325,6 +337,7 @@
             this.oznaka_tb.Name = "oznaka_tb";
             this.oznaka_tb.Size = new System.Drawing.Size(114, 20);
             this.oznaka_tb.TabIndex = 7;
+            this.oznaka_tb.Validating += new System.ComponentModel.CancelEventHandler(this.oznaka_tb_Validating);
             // 
             // label3
             // 
@@ -377,6 +390,10 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Naziv:";
             // 
+            // ep
+            // 
+            this.ep.ContainerControl = this;
+            // 
             // Izmena
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -393,6 +410,7 @@
             this.dpodaci_gb.PerformLayout();
             this.opodaci_gb.ResumeLayout(false);
             this.opodaci_gb.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ep)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -427,5 +445,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ErrorProvider ep;
     }
 }
