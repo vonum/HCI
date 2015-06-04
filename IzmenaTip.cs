@@ -49,6 +49,8 @@ namespace HCI_FINAL
                 {
                     if (tip.oznaka.Equals(oznaka_tb.Text) || tip.naziv.Equals(naziv_tb.Text))
                     {
+                        if (tip == tr)
+                            continue;
                         tmp1 = false;
                         MessageBox.Show("Postoji tip sa unetim nazivom ili oznakom");
                         break;

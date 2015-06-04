@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Resursi");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Resursi");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.dodajToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,7 +45,10 @@
             this.stablo = new System.Windows.Forms.TreeView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -144,10 +147,10 @@
             this.stablo.ImageList = this.imageList1;
             this.stablo.Location = new System.Drawing.Point(0, 27);
             this.stablo.Name = "stablo";
-            treeNode1.Name = "resursi";
-            treeNode1.Text = "Resursi";
+            treeNode2.Name = "resursi";
+            treeNode2.Text = "Resursi";
             this.stablo.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1});
+            treeNode2});
             this.stablo.SelectedImageIndex = 0;
             this.stablo.Size = new System.Drawing.Size(121, 609);
             this.stablo.TabIndex = 1;
@@ -166,12 +169,24 @@
             this.panel1.AllowDrop = true;
             this.panel1.BackgroundImage = global::HCI_FINAL.Properties.Resources.LOL;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(118, 27);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(640, 609);
             this.panel1.TabIndex = 2;
             this.panel1.DragDrop += new System.Windows.Forms.DragEventHandler(this.panel1_DragDrop);
             this.panel1.DragEnter += new System.Windows.Forms.DragEventHandler(this.panel1_DragEnter);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Image = global::HCI_FINAL.Properties.Resources.trash;
+            this.pictureBox1.Location = new System.Drawing.Point(578, 547);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // Form1
             // 
@@ -188,6 +203,8 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -209,6 +226,7 @@
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ToolStripMenuItem tmpToolStripMenuItem;
+        private System.Windows.Forms.PictureBox pictureBox1;
 
     }
 }

@@ -30,6 +30,7 @@ namespace HCI_FINAL
             text_rx = new System.Text.RegularExpressions.Regex("^[a-z, A-Z]+$");
             num_rx = new System.Text.RegularExpressions.Regex("^[0-9]+$");
             valid = true;
+            img = resurs.ikonica;
         }
 
         protected override void OnLoad(EventArgs e)                             //ucitavanje tabele**********/
@@ -75,71 +76,91 @@ namespace HCI_FINAL
 
             if (valid)
             {
-                resurs.opis = opis_tb.Text;
-                resurs.naziv = naziv_tb.Text;
-                resurs.ikonica = img;
-                resurs.oznaka = oznaka_tb.Text;
+                bool tmp = true;
 
-                if (obn_cb.Text.Equals("Obnovljiv"))
-                    resurs.obnovljiv = true;
-                else
-                    resurs.obnovljiv = false;
-
-                if (strv_cb.Text.Equals("Bitan"))
-                    resurs.str_vaznost = true;
-                else
-                    resurs.str_vaznost = false;
-
-                if (ekspl_cb.Text.Equals("Eksploativ"))
-                    resurs.eskploativ = true;
-                else
-                    resurs.eskploativ = false;
-
-                try
+                foreach (Rsc r in table.resursi)
                 {
-                    resurs.cena = Convert.ToInt32(cena_tb.Text);
-                }
-                catch (FormatException exc)
-                {
-                    Console.WriteLine("Input string is not a sequence of digits.");
-                    resurs.cena = 0;
-                }
-
-                if (jm_cb.Text.Equals("Tona"))
-                    resurs.jm = JedinicaMere.TONA;
-                else
-                    if (jm_cb.Text.Equals("KG"))
-                        resurs.jm = JedinicaMere.KG;
-                    else
-                        if (jm_cb.Text.Equals("Merica"))
-                            resurs.jm = JedinicaMere.MERICA;
-                        else
-                            resurs.jm = JedinicaMere.BAREL;
-
-                if (frekv_cb.Text.Equals("Redak"))
-                    resurs.frekv = Frekvencija.REDAK;
-                else
-                    if (frekv_cb.Text.Equals("Cest"))
-                        resurs.frekv = Frekvencija.CEST;
-                    else
-                        resurs.frekv = Frekvencija.UNIVERZALAN;
-
-                String naziv_tipa = tip_cb.Text;
-
-                foreach (TR tip in tipovi)
-                {
-                    if (tip.naziv.Equals(naziv_tipa))
+                    if (r.naziv.Equals(naziv_tb.Text) || r.oznaka.Equals(oznaka_tb.Text))
                     {
-                        resurs.tip = tip;
+                        if (r == resurs)
+                            continue;
+                        tmp = false;
+                        MessageBox.Show("Postoji resurs sa unetim nazivom ili oznakom");
                         break;
                     }
+
                 }
 
-                table.refresh();
-                //form.reloadForm();
-                //form.changeImage(resurs);
+                if (tmp)
+                {
+                    resurs.opis = opis_tb.Text;
+                    resurs.naziv = naziv_tb.Text;
+                    resurs.ikonica = img;
+                    resurs.oznaka = oznaka_tb.Text;
 
-                this.Close();
+                    if (obn_cb.Text.Equals("Obnovljiv"))
+                        resurs.obnovljiv = true;
+                    else
+                        resurs.obnovljiv = false;
+
+                    if (strv_cb.Text.Equals("Bitan"))
+                        resurs.str_vaznost = true;
+                    else
+                        resurs.str_vaznost = false;
+
+                    if (ekspl_cb.Text.Equals("Eksploativ"))
+                        resurs.eskploativ = true;
+                    else
+                        resurs.eskploativ = false;
+
+                    try
+                    {
+                        resurs.cena = Convert.ToInt32(cena_tb.Text);
+                    }
+                    catch (FormatException exc)
+                    {
+                        Console.WriteLine("Input string is not a sequence of digits.");
+                        resurs.cena = 0;
+                    }
+
+                    if (jm_cb.Text.Equals("Tona"))
+                        resurs.jm = JedinicaMere.TONA;
+                    else
+                        if (jm_cb.Text.Equals("KG"))
+                            resurs.jm = JedinicaMere.KG;
+                        else
+                            if (jm_cb.Text.Equals("Merica"))
+                                resurs.jm = JedinicaMere.MERICA;
+                            else
+                                resurs.jm = JedinicaMere.BAREL;
+
+                    if (frekv_cb.Text.Equals("Redak"))
+                        resurs.frekv = Frekvencija.REDAK;
+                    else
+                        if (frekv_cb.Text.Equals("Cest"))
+                            resurs.frekv = Frekvencija.CEST;
+                        else
+                            resurs.frekv = Frekvencija.UNIVERZALAN;
+
+                    String naziv_tipa = tip_cb.Text;
+
+                    foreach (TR tip in tipovi)
+                    {
+                        if (tip.naziv.Equals(naziv_tipa))
+                        {
+                            resurs.tip = tip;
+                            break;
+                        }
+                    }
+
+                    resurs.ikonica = img;
+
+                    table.refresh();
+                    //form.reloadForm();
+                    //form.changeImage(resurs);
+
+                    this.Close();
+                }
             }
         }
 

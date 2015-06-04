@@ -46,6 +46,8 @@ namespace HCI_FINAL
                 {
                     if (et.oznaka.Equals(oznaka_tb.Text))
                     {
+                        if (et == etiketa)
+                            continue;
                         tmp = false;
                         MessageBox.Show("Postoji etiketa sa unetom oznakom");
                         break;

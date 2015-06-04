@@ -142,11 +142,25 @@ namespace HCI_FINAL
                 if (resurs.ikonica == null)
                     resurs.ikonica = resurs.tip.ikonica;
 
-                resursi.Add(resurs);
+                bool tmp = true;
+                foreach (Rsc r in resursi)
+                {
+                    if (r.oznaka.Equals(resurs.oznaka) || r.naziv.Equals(resurs.naziv))
+                    {
+                        MessageBox.Show("Postoji resurs sa unetim nazivom ili oznakom");
+                        tmp = false;
+                        break;
+                    }
+                }
 
-                form.reloadForm();
+                if (tmp)
+                {
+                    resursi.Add(resurs);
 
-                this.Close();
+                    form.reloadForm();
+
+                    this.Close();
+                }
             }
 
         }

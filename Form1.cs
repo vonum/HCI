@@ -300,7 +300,7 @@ namespace HCI_FINAL
             }
         }
 
-        private void down(object sender, MouseEventArgs e)
+        private void down(object sender, MouseEventArgs e)                  //klik na picturebox
         {
             if (e.Button != MouseButtons.Left)
                 return;
@@ -309,7 +309,7 @@ namespace HCI_FINAL
             pos.Y = e.Y;
         }
 
-        private void move(object sender, MouseEventArgs e)
+        private void move(object sender, MouseEventArgs e)                  //pomeranje picturebox-a
         {
             if (isSelected)
             {
@@ -320,7 +320,7 @@ namespace HCI_FINAL
             }
         }
 
-        private void up(object sender, MouseEventArgs e)            //NUBOVSKI
+        private void up(object sender, MouseEventArgs e)            //NUBOVSKI  pustanje picturebox-a
         {
             isSelected = false;
 
@@ -331,8 +331,20 @@ namespace HCI_FINAL
                 tmp.Add(pb);
             }
 
-            int idx = tmp.IndexOf((PictureBox)sender);
-            ikonice.ElementAt(idx).lokacija = ((PictureBox)sender).Location;
+            Point pos = panel1.PointToClient(Cursor.Position);
+
+            if (pos.X >= 578 && pos.X <= 628 && pos.Y >= 547 && pos.Y <= 597)
+            {
+                //578, 547
+                int idx = tmp.IndexOf((PictureBox)sender);
+                panel1.Controls.Remove((PictureBox)sender);
+                ikonice.RemoveAt(idx - 1);
+            }
+            else
+            {
+                int idx = tmp.IndexOf((PictureBox)sender);
+                ikonice.ElementAt(idx - 1).lokacija = ((PictureBox)sender).Location;
+            }
         }
 
         private void hover(object sender, EventArgs e)
@@ -349,7 +361,6 @@ namespace HCI_FINAL
             {
                 stablo.Nodes[0].Nodes.Add(resurs.naziv);
             }
-
         }
 
         public void removePB(Rsc resurs)                                //IZMENITI NUBOVSKI KOD
@@ -420,6 +431,24 @@ namespace HCI_FINAL
         private void Form1_Activated(object sender, EventArgs e)
         {
             reloadForm();
+            foreach (Rsc r in resursi)
+            {
+                foreach (SerIkonica i in ikonice)
+                {
+                    if (i.naziv.Equals(r.naziv))
+                    {
+                        i.ikonica = r.ikonica;
+                    }
+                }
+                foreach (PictureBox pb in panel1.Controls)
+                {
+                    if (pb.Name.Equals(r.naziv))
+                    {
+                        pb.Image = r.ikonica;
+                    }
+                }
+
+            }
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)                   //autosave
