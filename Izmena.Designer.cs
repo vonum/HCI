@@ -58,6 +58,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.ep = new System.Windows.Forms.ErrorProvider(this.components);
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.groupBox1.SuspendLayout();
             this.dpodaci_gb.SuspendLayout();
             this.opodaci_gb.SuspendLayout();
@@ -68,7 +69,7 @@
             // 
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 226);
+            this.groupBox1.Location = new System.Drawing.Point(12, 272);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(557, 63);
             this.groupBox1.TabIndex = 12;
@@ -112,7 +113,7 @@
             this.dpodaci_gb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dpodaci_gb.Location = new System.Drawing.Point(285, 12);
             this.dpodaci_gb.Name = "dpodaci_gb";
-            this.dpodaci_gb.Size = new System.Drawing.Size(284, 208);
+            this.dpodaci_gb.Size = new System.Drawing.Size(284, 254);
             this.dpodaci_gb.TabIndex = 11;
             this.dpodaci_gb.TabStop = false;
             this.dpodaci_gb.Text = "Dodatni Podaci";
@@ -261,6 +262,7 @@
             // 
             // opodaci_gb
             // 
+            this.opodaci_gb.Controls.Add(this.checkedListBox1);
             this.opodaci_gb.Controls.Add(this.label12);
             this.opodaci_gb.Controls.Add(this.button3);
             this.opodaci_gb.Controls.Add(this.tip_cb);
@@ -275,7 +277,7 @@
             this.opodaci_gb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.opodaci_gb.Location = new System.Drawing.Point(12, 12);
             this.opodaci_gb.Name = "opodaci_gb";
-            this.opodaci_gb.Size = new System.Drawing.Size(267, 208);
+            this.opodaci_gb.Size = new System.Drawing.Size(267, 254);
             this.opodaci_gb.TabIndex = 10;
             this.opodaci_gb.TabStop = false;
             this.opodaci_gb.Text = "Osnovni Podaci";
@@ -284,7 +286,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(20, 138);
+            this.label12.Location = new System.Drawing.Point(20, 167);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(40, 13);
             this.label12.TabIndex = 12;
@@ -293,7 +295,7 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(135, 167);
+            this.button3.Location = new System.Drawing.Point(135, 137);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 11;
@@ -364,7 +366,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(20, 167);
+            this.label5.Location = new System.Drawing.Point(20, 137);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(45, 13);
             this.label5.TabIndex = 4;
@@ -394,12 +396,21 @@
             // 
             this.ep.ContainerControl = this;
             // 
+            // checkedListBox1
+            // 
+            this.checkedListBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.Location = new System.Drawing.Point(116, 167);
+            this.checkedListBox1.Name = "checkedListBox1";
+            this.checkedListBox1.Size = new System.Drawing.Size(114, 76);
+            this.checkedListBox1.TabIndex = 13;
+            // 
             // Izmena
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightPink;
-            this.ClientSize = new System.Drawing.Size(584, 304);
+            this.ClientSize = new System.Drawing.Size(584, 347);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dpodaci_gb);
             this.Controls.Add(this.opodaci_gb);
@@ -446,5 +457,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ErrorProvider ep;
+        private System.Windows.Forms.CheckedListBox checkedListBox1;
     }
 }

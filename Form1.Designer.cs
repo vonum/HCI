@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Resursi");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Resursi");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.dodajToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,7 +40,6 @@
             this.resursiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tipoviResursaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.etiketeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sacuvajToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tmpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stablo = new System.Windows.Forms.TreeView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
@@ -56,7 +55,6 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dodajToolStripMenuItem,
             this.tabelaToolStripMenuItem,
-            this.sacuvajToolStripMenuItem,
             this.tmpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -127,13 +125,6 @@
             this.etiketeToolStripMenuItem.Text = "Etikete";
             this.etiketeToolStripMenuItem.Click += new System.EventHandler(this.etiketeToolStripMenuItem_Click);
             // 
-            // sacuvajToolStripMenuItem
-            // 
-            this.sacuvajToolStripMenuItem.Name = "sacuvajToolStripMenuItem";
-            this.sacuvajToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
-            this.sacuvajToolStripMenuItem.Text = "Sacuvaj";
-            this.sacuvajToolStripMenuItem.Click += new System.EventHandler(this.sacuvajToolStripMenuItem_Click);
-            // 
             // tmpToolStripMenuItem
             // 
             this.tmpToolStripMenuItem.Name = "tmpToolStripMenuItem";
@@ -147,10 +138,10 @@
             this.stablo.ImageList = this.imageList1;
             this.stablo.Location = new System.Drawing.Point(0, 27);
             this.stablo.Name = "stablo";
-            treeNode2.Name = "resursi";
-            treeNode2.Text = "Resursi";
+            treeNode1.Name = "resursi";
+            treeNode1.Text = "Resursi";
             this.stablo.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode2});
+            treeNode1});
             this.stablo.SelectedImageIndex = 0;
             this.stablo.Size = new System.Drawing.Size(121, 609);
             this.stablo.TabIndex = 1;
@@ -162,7 +153,7 @@
             // 
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "LOL.jpg");
+            this.imageList1.Images.SetKeyName(0, "rsc.png");
             // 
             // panel1
             // 
@@ -218,7 +209,6 @@
         private System.Windows.Forms.ToolStripMenuItem tipResursaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem etiketaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tabelaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem sacuvajToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem resursiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tipoviResursaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem etiketeToolStripMenuItem;

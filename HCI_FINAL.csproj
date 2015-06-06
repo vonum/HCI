@@ -169,6 +169,7 @@
     <None Include="Resources\trash.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="rsc.png" />
     <Content Include="trash.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

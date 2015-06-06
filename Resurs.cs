@@ -34,13 +34,6 @@ namespace HCI_FINAL
             InitializeComponent();
         }
 
-        private void Resurs_Load(object sender, EventArgs e)            //zasto ovo ne radi?****************//
-        {
-            foreach (TR tr in tipovi)
-            {
-                tip_cb.Items.Add(tr.naziv);
-            }
-        }
         protected override void OnLoad(EventArgs e)
         {
             foreach (TR tr in tipovi)
@@ -50,6 +43,7 @@ namespace HCI_FINAL
 
             foreach (Et et in etikete)
             {
+                checkedListBox1.Items.Add(et.oznaka);
             }
 
         }
@@ -138,6 +132,12 @@ namespace HCI_FINAL
                         break;
                     }
                 }
+
+                foreach (int idx in checkedListBox1.CheckedIndices)
+                {
+                    resurs.etikete.Add(etikete.ElementAt(idx));
+                }
+
 
                 if (resurs.ikonica == null)
                     resurs.ikonica = resurs.tip.ikonica;

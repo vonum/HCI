@@ -16,12 +16,13 @@ namespace HCI_FINAL
         public List<TR> tipovi;
         public Tabela table;
         public Form1 form;
+        public List<Et> etikete;
 
         private System.Text.RegularExpressions.Regex text_rx;
         private System.Text.RegularExpressions.Regex num_rx;
         private bool valid;
 
-        public Izmena(List<TR> tipovi, Rsc resurs, Tabela table)
+        public Izmena(List<TR> tipovi, Rsc resurs, Tabela table, List<Et> etikete)
         {
             this.resurs = resurs;
             this.tipovi = tipovi;
@@ -31,6 +32,7 @@ namespace HCI_FINAL
             num_rx = new System.Text.RegularExpressions.Regex("^[0-9]+$");
             valid = true;
             img = resurs.ikonica;
+            this.etikete = etikete;
         }
 
         protected override void OnLoad(EventArgs e)                             //ucitavanje tabele**********/
@@ -50,6 +52,17 @@ namespace HCI_FINAL
             ekspl_cb.Text = (resurs.eskploativ) ? "Eksploativ" : "Neeksploativ";
             cena_tb.Text = resurs.cena.ToString();
             strv_cb.Text = (resurs.str_vaznost) ? "Bitan" : "Nebitan";
+
+            foreach (Et et in etikete)
+            {
+                checkedListBox1.Items.Add(et.oznaka);
+                if (resurs.etikete.Contains(et))
+                {
+                    checkedListBox1.SetItemChecked(checkedListBox1.Items.Count - 1, true);
+                }
+            }
+
+
         }
 
 
@@ -154,6 +167,12 @@ namespace HCI_FINAL
                     }
 
                     resurs.ikonica = img;
+
+                    resurs.etikete.Clear();
+                    foreach (int idx in checkedListBox1.CheckedIndices)
+                    {
+                        resurs.etikete.Add(etikete.ElementAt(idx));
+                    }
 
                     table.refresh();
                     //form.reloadForm();

@@ -60,7 +60,7 @@ namespace HCI_FINAL
 
             if (e.ColumnIndex == 6)
             {
-                Izmena izm = new Izmena(tipovi, resursi.ElementAt(table.CurrentRow.Index), this);
+                Izmena izm = new Izmena(tipovi, resursi.ElementAt(table.CurrentRow.Index), this, form.etikete);
                 izm.Show(); 
                 
             }
@@ -99,6 +99,14 @@ namespace HCI_FINAL
                         ekspl_tb.Text = "Neeksploativ";
                     cena_tb.Text = tmp.cena.ToString();
                     frekv_tb.Text = tmp.frekv.ToString();
+
+                    listView1.Items.Clear();
+
+                    foreach (Et et in tmp.etikete)
+                    {
+                        listView1.Items.Add(et.oznaka);
+                    }
+
                 }
 
         }

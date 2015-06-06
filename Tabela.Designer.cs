@@ -39,6 +39,12 @@
             this.obrisi_c = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dpodaci_gb = new System.Windows.Forms.GroupBox();
+            this.frekv_tb = new System.Windows.Forms.TextBox();
+            this.obn_tb = new System.Windows.Forms.TextBox();
+            this.jm_tb = new System.Windows.Forms.TextBox();
+            this.ekspl_tb = new System.Windows.Forms.TextBox();
+            this.strv_tb = new System.Windows.Forms.TextBox();
+            this.cena_tb = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -46,6 +52,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.opodaci_gb = new System.Windows.Forms.GroupBox();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.tip_tb = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.opis_tb = new System.Windows.Forms.TextBox();
             this.naziv_tb = new System.Windows.Forms.TextBox();
@@ -63,13 +71,6 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.tip_tb = new System.Windows.Forms.TextBox();
-            this.cena_tb = new System.Windows.Forms.TextBox();
-            this.strv_tb = new System.Windows.Forms.TextBox();
-            this.ekspl_tb = new System.Windows.Forms.TextBox();
-            this.jm_tb = new System.Windows.Forms.TextBox();
-            this.frekv_tb = new System.Windows.Forms.TextBox();
-            this.obn_tb = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.table)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.dpodaci_gb.SuspendLayout();
@@ -185,6 +186,54 @@
             this.dpodaci_gb.TabStop = false;
             this.dpodaci_gb.Text = "Dodatni Podaci";
             // 
+            // frekv_tb
+            // 
+            this.frekv_tb.Enabled = false;
+            this.frekv_tb.Location = new System.Drawing.Point(150, 164);
+            this.frekv_tb.Name = "frekv_tb";
+            this.frekv_tb.Size = new System.Drawing.Size(107, 23);
+            this.frekv_tb.TabIndex = 12;
+            // 
+            // obn_tb
+            // 
+            this.obn_tb.Enabled = false;
+            this.obn_tb.Location = new System.Drawing.Point(150, 27);
+            this.obn_tb.Name = "obn_tb";
+            this.obn_tb.Size = new System.Drawing.Size(107, 23);
+            this.obn_tb.TabIndex = 13;
+            // 
+            // jm_tb
+            // 
+            this.jm_tb.Enabled = false;
+            this.jm_tb.Location = new System.Drawing.Point(150, 110);
+            this.jm_tb.Name = "jm_tb";
+            this.jm_tb.Size = new System.Drawing.Size(107, 23);
+            this.jm_tb.TabIndex = 9;
+            // 
+            // ekspl_tb
+            // 
+            this.ekspl_tb.Enabled = false;
+            this.ekspl_tb.Location = new System.Drawing.Point(150, 84);
+            this.ekspl_tb.Name = "ekspl_tb";
+            this.ekspl_tb.Size = new System.Drawing.Size(107, 23);
+            this.ekspl_tb.TabIndex = 8;
+            // 
+            // strv_tb
+            // 
+            this.strv_tb.Enabled = false;
+            this.strv_tb.Location = new System.Drawing.Point(150, 55);
+            this.strv_tb.Name = "strv_tb";
+            this.strv_tb.Size = new System.Drawing.Size(107, 23);
+            this.strv_tb.TabIndex = 7;
+            // 
+            // cena_tb
+            // 
+            this.cena_tb.Enabled = false;
+            this.cena_tb.Location = new System.Drawing.Point(150, 135);
+            this.cena_tb.Name = "cena_tb";
+            this.cena_tb.Size = new System.Drawing.Size(107, 23);
+            this.cena_tb.TabIndex = 6;
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -247,6 +296,7 @@
             // 
             // opodaci_gb
             // 
+            this.opodaci_gb.Controls.Add(this.listView1);
             this.opodaci_gb.Controls.Add(this.tip_tb);
             this.opodaci_gb.Controls.Add(this.label15);
             this.opodaci_gb.Controls.Add(this.opis_tb);
@@ -263,6 +313,24 @@
             this.opodaci_gb.TabIndex = 10;
             this.opodaci_gb.TabStop = false;
             this.opodaci_gb.Text = "Osnovni Podaci";
+            // 
+            // listView1
+            // 
+            this.listView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listView1.Location = new System.Drawing.Point(116, 144);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(114, 58);
+            this.listView1.TabIndex = 13;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.List;
+            // 
+            // tip_tb
+            // 
+            this.tip_tb.Enabled = false;
+            this.tip_tb.Location = new System.Drawing.Point(116, 110);
+            this.tip_tb.Name = "tip_tb";
+            this.tip_tb.Size = new System.Drawing.Size(114, 23);
+            this.tip_tb.TabIndex = 12;
             // 
             // label15
             // 
@@ -427,62 +495,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // tip_tb
-            // 
-            this.tip_tb.Enabled = false;
-            this.tip_tb.Location = new System.Drawing.Point(116, 110);
-            this.tip_tb.Name = "tip_tb";
-            this.tip_tb.Size = new System.Drawing.Size(114, 23);
-            this.tip_tb.TabIndex = 12;
-            // 
-            // cena_tb
-            // 
-            this.cena_tb.Enabled = false;
-            this.cena_tb.Location = new System.Drawing.Point(150, 135);
-            this.cena_tb.Name = "cena_tb";
-            this.cena_tb.Size = new System.Drawing.Size(107, 23);
-            this.cena_tb.TabIndex = 6;
-            // 
-            // strv_tb
-            // 
-            this.strv_tb.Enabled = false;
-            this.strv_tb.Location = new System.Drawing.Point(150, 55);
-            this.strv_tb.Name = "strv_tb";
-            this.strv_tb.Size = new System.Drawing.Size(107, 23);
-            this.strv_tb.TabIndex = 7;
-            // 
-            // ekspl_tb
-            // 
-            this.ekspl_tb.Enabled = false;
-            this.ekspl_tb.Location = new System.Drawing.Point(150, 84);
-            this.ekspl_tb.Name = "ekspl_tb";
-            this.ekspl_tb.Size = new System.Drawing.Size(107, 23);
-            this.ekspl_tb.TabIndex = 8;
-            // 
-            // jm_tb
-            // 
-            this.jm_tb.Enabled = false;
-            this.jm_tb.Location = new System.Drawing.Point(150, 110);
-            this.jm_tb.Name = "jm_tb";
-            this.jm_tb.Size = new System.Drawing.Size(107, 23);
-            this.jm_tb.TabIndex = 9;
-            // 
-            // frekv_tb
-            // 
-            this.frekv_tb.Enabled = false;
-            this.frekv_tb.Location = new System.Drawing.Point(150, 164);
-            this.frekv_tb.Name = "frekv_tb";
-            this.frekv_tb.Size = new System.Drawing.Size(107, 23);
-            this.frekv_tb.TabIndex = 12;
-            // 
-            // obn_tb
-            // 
-            this.obn_tb.Enabled = false;
-            this.obn_tb.Location = new System.Drawing.Point(150, 27);
-            this.obn_tb.Name = "obn_tb";
-            this.obn_tb.Size = new System.Drawing.Size(107, 23);
-            this.obn_tb.TabIndex = 13;
-            // 
             // Tabela
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -552,5 +564,6 @@
         private System.Windows.Forms.TextBox strv_tb;
         private System.Windows.Forms.TextBox cena_tb;
         private System.Windows.Forms.TextBox tip_tb;
+        private System.Windows.Forms.ListView listView1;
     }
 }

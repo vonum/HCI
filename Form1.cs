@@ -254,7 +254,7 @@ namespace HCI_FINAL
                 {
                     if (((PictureBox)sender).Name.Equals(resurs.naziv))
                     {
-                        Izmena izm = new Izmena(tipovi, resurs, new Tabela(resursi, tipovi, this));
+                        Izmena izm = new Izmena(tipovi, resurs, new Tabela(resursi, tipovi, this), etikete);
                         izm.Show();
                         break;
                     }
@@ -293,7 +293,7 @@ namespace HCI_FINAL
             {
                 if (((PictureBox)sender).Name.Equals(resurs.naziv))
                 {
-                    Izmena izm = new Izmena(tipovi, resurs, new Tabela(resursi, tipovi, this));
+                    Izmena izm = new Izmena(tipovi, resurs, new Tabela(resursi, tipovi, this), etikete);
                     izm.Show();
                     break;
                 }
@@ -353,16 +353,6 @@ namespace HCI_FINAL
 
         }
 
-        public void reloadForm()
-        {
-            stablo.Nodes.Clear();
-            stablo.Nodes.Add("resursi");
-            foreach (Rsc resurs in resursi)
-            {
-                stablo.Nodes[0].Nodes.Add(resurs.naziv);
-            }
-        }
-
         public void removePB(Rsc resurs)                                //IZMENITI NUBOVSKI KOD
         {
             List<PictureBox> tmp = new List<PictureBox>();
@@ -408,7 +398,7 @@ namespace HCI_FINAL
             }
         }
 
-        private void stablo_MouseClick(object sender, MouseEventArgs e)
+        private void stablo_MouseClick(object sender, MouseEventArgs e)            
         {
            TreeNode sel = stablo.GetNodeAt(e.Location);
            if (sel != null)
@@ -425,7 +415,26 @@ namespace HCI_FINAL
                        pb.BorderStyle = BorderStyle.None;
                    }
                }
+
+               stablo.SelectedImageIndex = stablo.SelectedNode.ImageIndex;
+
            }
+        }
+
+        public void reloadForm()
+        {
+            imageList1.Images.Clear();
+            imageList1.Images.Add(Image.FromFile("rsc.png"));
+            stablo.Nodes.Clear();
+            stablo.Nodes.Add("resursi");
+            int i = 0;
+            foreach (Rsc resurs in resursi)
+            {
+                stablo.Nodes[0].Nodes.Add(resurs.naziv);
+                imageList1.Images.Add(resurs.ikonica);
+                stablo.Nodes[0].Nodes[i].ImageIndex = ++i;
+            }
+
         }
 
         private void Form1_Activated(object sender, EventArgs e)
