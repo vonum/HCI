@@ -21,8 +21,9 @@ namespace HCI_FINAL
         private System.Text.RegularExpressions.Regex text_rx;
         private System.Text.RegularExpressions.Regex num_rx;
         private bool valid;
+        private String name;
 
-        public Izmena(List<TR> tipovi, Rsc resurs, Tabela table, List<Et> etikete)
+        public Izmena(List<TR> tipovi, Rsc resurs, Tabela table, List<Et> etikete, Form1 form)
         {
             this.resurs = resurs;
             this.tipovi = tipovi;
@@ -33,6 +34,8 @@ namespace HCI_FINAL
             valid = true;
             img = resurs.ikonica;
             this.etikete = etikete;
+            this.form = form;
+            this.name = resurs.naziv;
         }
 
         protected override void OnLoad(EventArgs e)                             //ucitavanje tabele**********/
@@ -330,6 +333,25 @@ namespace HCI_FINAL
                 ep.SetError(frekv_cb, "Odredite frekvenciju pojavljivanja resursa");
                 frekv_cb.ForeColor = Color.Red;
                 valid = false;
+            }
+        }
+
+        private void Izmena_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            foreach(SerIkonica si in form.ikonice)
+            {
+                if (si.naziv.Equals(name))
+                {
+                    si.naziv = resurs.naziv;
+                }
+            }
+
+            foreach (PictureBox pb in form.panel1.Controls)
+            {
+                if (pb.Name.Equals(name))
+                {
+                    pb.Name = resurs.naziv;
+                }
             }
         }
     }

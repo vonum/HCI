@@ -254,7 +254,7 @@ namespace HCI_FINAL
                 {
                     if (((PictureBox)sender).Name.Equals(resurs.naziv))
                     {
-                        Izmena izm = new Izmena(tipovi, resurs, new Tabela(resursi, tipovi, this), etikete);
+                        Izmena izm = new Izmena(tipovi, resurs, new Tabela(resursi, tipovi, this), etikete, this);
                         izm.Show();
                         break;
                     }
@@ -294,7 +294,7 @@ namespace HCI_FINAL
             {
                 if (((PictureBox)sender).Name.Equals(resurs.naziv))
                 {
-                    Izmena izm = new Izmena(tipovi, resurs, new Tabela(resursi, tipovi, this), etikete);
+                    Izmena izm = new Izmena(tipovi, resurs, new Tabela(resursi, tipovi, this), etikete, this);
                     izm.Show();
                     break;
                 }
@@ -533,6 +533,11 @@ namespace HCI_FINAL
         {
             Tutorijal t = new Tutorijal(9);
             t.Show();
+        }
+
+        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, "HelpPls.chm");
         }
 
 

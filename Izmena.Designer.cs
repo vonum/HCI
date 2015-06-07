@@ -46,6 +46,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.opodaci_gb = new System.Windows.Forms.GroupBox();
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.label12 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.tip_cb = new System.Windows.Forms.ComboBox();
@@ -58,7 +59,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.ep = new System.Windows.Forms.ErrorProvider(this.components);
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.groupBox1.SuspendLayout();
             this.dpodaci_gb.SuspendLayout();
             this.opodaci_gb.SuspendLayout();
@@ -282,6 +282,15 @@
             this.opodaci_gb.TabStop = false;
             this.opodaci_gb.Text = "Osnovni Podaci";
             // 
+            // checkedListBox1
+            // 
+            this.checkedListBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.Location = new System.Drawing.Point(116, 167);
+            this.checkedListBox1.Name = "checkedListBox1";
+            this.checkedListBox1.Size = new System.Drawing.Size(114, 69);
+            this.checkedListBox1.TabIndex = 13;
+            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -396,15 +405,6 @@
             // 
             this.ep.ContainerControl = this;
             // 
-            // checkedListBox1
-            // 
-            this.checkedListBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(116, 167);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(114, 76);
-            this.checkedListBox1.TabIndex = 13;
-            // 
             // Izmena
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -416,6 +416,7 @@
             this.Controls.Add(this.opodaci_gb);
             this.Name = "Izmena";
             this.Text = "Izmena";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Izmena_FormClosing);
             this.groupBox1.ResumeLayout(false);
             this.dpodaci_gb.ResumeLayout(false);
             this.dpodaci_gb.PerformLayout();

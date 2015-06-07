@@ -60,7 +60,7 @@ namespace HCI_FINAL
 
             if (e.ColumnIndex == 6)
             {
-                Izmena izm = new Izmena(tipovi, resursi.ElementAt(table.CurrentRow.Index), this, form.etikete);
+                Izmena izm = new Izmena(tipovi, resursi.ElementAt(table.CurrentRow.Index), this, form.etikete, form);
                 izm.Show(); 
                 
             }
