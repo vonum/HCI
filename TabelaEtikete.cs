@@ -32,17 +32,29 @@ namespace HCI_FINAL
             {
                 Et et = etikete.ElementAt(table.CurrentRow.Index);
 
+                bool tmp = true;
+                String poruka = "Nije moguce obrisati etiketu, jer sledeci resursi sadrze etiketu:\n";
+
                 foreach (Rsc resurs in resursi)
                 {
-                    if (resurs.etikete.Contains(et))
+                    foreach(Et etiketa in resurs.etikete)
                     {
-                        MessageBox.Show("Nije moguce izvrsiti operaciju, jer postoji resurs koji poseduje etiketu");
-                        return;
+                        if (etiketa.oznaka.Equals(et.oznaka))
+                        {
+                            poruka += resurs.naziv + " " + resurs.oznaka + "\n";
+                            tmp = false;
+                            break;
+                        }
                     }
                 }
+                if (tmp)
+                {
+                    etikete.RemoveAt(table.CurrentRow.Index);
+                    table.Rows.Remove(table.Rows[table.CurrentRow.Index]);
 
-                etikete.RemoveAt(table.CurrentRow.Index);
-                table.Rows.Remove(table.Rows[table.CurrentRow.Index]);
+                }
+                else
+                    MessageBox.Show(poruka);
             }
             else
                 if (e.ColumnIndex == 3)

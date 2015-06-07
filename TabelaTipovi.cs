@@ -32,19 +32,26 @@ namespace HCI_FINAL
             {
                 TR tip = tipovi.ElementAt(table.CurrentRow.Index);
 
+                bool tmp = true;
+                String poruka = "Nije moguce obrisati tip resursa, jer su sledeci resursi tog tipa:\n";
+
                 foreach (Rsc resurs in resursi)
                 {
                     if (resurs.tip.naziv.Equals(tip.naziv))
-                    //if(resurs.tip == tip)
                     {
-                        MessageBox.Show("Nije moguce izvrsiti operaciju, jer postoji resurs tog tipa");
-                        return;
+                        poruka += resurs.naziv + " " + resurs.oznaka + "\n";
+                        tmp = false;
+                        continue;
                     }
                 }
 
-
-                tipovi.RemoveAt(table.CurrentRow.Index);
-                table.Rows.Remove(table.Rows[table.CurrentRow.Index]);
+                if (tmp)
+                {
+                    tipovi.RemoveAt(table.CurrentRow.Index);
+                    table.Rows.Remove(table.Rows[table.CurrentRow.Index]);
+                }
+                else
+                    MessageBox.Show(poruka);
             }
             else if (e.ColumnIndex == 3)
             {
