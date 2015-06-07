@@ -112,6 +112,48 @@
       <DependentUpon>TipResursa.cs</DependentUpon>
     </Compile>
     <Compile Include="TR.cs" />
+    <Compile Include="Tutorijal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tutorijal.Designer.cs">
+      <DependentUpon>Tutorijal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TutorijalEtiketa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TutorijalEtiketa.Designer.cs">
+      <DependentUpon>TutorijalEtiketa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TutorijalTabelaEtiketa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TutorijalTabelaEtiketa.Designer.cs">
+      <DependentUpon>TutorijalTabelaEtiketa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TutorijalTabelaResurs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TutorijalTabelaResurs.Designer.cs">
+      <DependentUpon>TutorijalTabelaResurs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TutorijalResurs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TutorijalResurs.Designer.cs">
+      <DependentUpon>TutorijalResurs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TutorijalTabelaTip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TutorijalTabelaTip.Designer.cs">
+      <DependentUpon>TutorijalTabelaTip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TutorijalTip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TutorijalTip.Designer.cs">
+      <DependentUpon>TutorijalTip.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Etiketa.resx">
       <DependentUpon>Etiketa.cs</DependentUpon>
     </EmbeddedResource>
@@ -151,6 +193,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TipResursa.resx">
       <DependentUpon>TipResursa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tutorijal.resx">
+      <DependentUpon>Tutorijal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TutorijalEtiketa.resx">
+      <DependentUpon>TutorijalEtiketa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TutorijalTabelaEtiketa.resx">
+      <DependentUpon>TutorijalTabelaEtiketa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TutorijalTabelaResurs.resx">
+      <DependentUpon>TutorijalTabelaResurs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TutorijalResurs.resx">
+      <DependentUpon>TutorijalResurs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TutorijalTabelaTip.resx">
+      <DependentUpon>TutorijalTabelaTip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TutorijalTip.resx">
+      <DependentUpon>TutorijalTip.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

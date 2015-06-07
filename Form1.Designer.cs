@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Resursi");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Resursi");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.dodajToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,10 +41,23 @@
             this.tipoviResursaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.etiketeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tmpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tutorijalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dodajToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.resursToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tipResursaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.etiketaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.izmenaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.resursToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tipResursaToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.etiketaToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.brisanjeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stablo = new System.Windows.Forms.TreeView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.resursToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tipResursaToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.etiketaToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -55,7 +68,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dodajToolStripMenuItem,
             this.tabelaToolStripMenuItem,
-            this.tmpToolStripMenuItem});
+            this.tmpToolStripMenuItem,
+            this.tutorijalToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(758, 24);
@@ -132,16 +146,98 @@
             this.tmpToolStripMenuItem.Text = "Tmp";
             this.tmpToolStripMenuItem.Click += new System.EventHandler(this.tmpToolStripMenuItem_Click);
             // 
+            // tutorijalToolStripMenuItem
+            // 
+            this.tutorijalToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dodajToolStripMenuItem1,
+            this.izmenaToolStripMenuItem,
+            this.brisanjeToolStripMenuItem});
+            this.tutorijalToolStripMenuItem.Name = "tutorijalToolStripMenuItem";
+            this.tutorijalToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
+            this.tutorijalToolStripMenuItem.Text = "Tutorijal";
+            // 
+            // dodajToolStripMenuItem1
+            // 
+            this.dodajToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.resursToolStripMenuItem1,
+            this.tipResursaToolStripMenuItem1,
+            this.etiketaToolStripMenuItem1});
+            this.dodajToolStripMenuItem1.Name = "dodajToolStripMenuItem1";
+            this.dodajToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.dodajToolStripMenuItem1.Text = "Dodaj";
+            // 
+            // resursToolStripMenuItem1
+            // 
+            this.resursToolStripMenuItem1.Name = "resursToolStripMenuItem1";
+            this.resursToolStripMenuItem1.Size = new System.Drawing.Size(131, 22);
+            this.resursToolStripMenuItem1.Text = "Resurs";
+            this.resursToolStripMenuItem1.Click += new System.EventHandler(this.resursToolStripMenuItem1_Click);
+            // 
+            // tipResursaToolStripMenuItem1
+            // 
+            this.tipResursaToolStripMenuItem1.Name = "tipResursaToolStripMenuItem1";
+            this.tipResursaToolStripMenuItem1.Size = new System.Drawing.Size(131, 22);
+            this.tipResursaToolStripMenuItem1.Text = "Tip resursa";
+            this.tipResursaToolStripMenuItem1.Click += new System.EventHandler(this.tipResursaToolStripMenuItem1_Click);
+            // 
+            // etiketaToolStripMenuItem1
+            // 
+            this.etiketaToolStripMenuItem1.Name = "etiketaToolStripMenuItem1";
+            this.etiketaToolStripMenuItem1.Size = new System.Drawing.Size(131, 22);
+            this.etiketaToolStripMenuItem1.Text = "Etiketa";
+            this.etiketaToolStripMenuItem1.Click += new System.EventHandler(this.etiketaToolStripMenuItem1_Click);
+            // 
+            // izmenaToolStripMenuItem
+            // 
+            this.izmenaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.resursToolStripMenuItem2,
+            this.tipResursaToolStripMenuItem2,
+            this.etiketaToolStripMenuItem2});
+            this.izmenaToolStripMenuItem.Name = "izmenaToolStripMenuItem";
+            this.izmenaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.izmenaToolStripMenuItem.Text = "Izmena";
+            // 
+            // resursToolStripMenuItem2
+            // 
+            this.resursToolStripMenuItem2.Name = "resursToolStripMenuItem2";
+            this.resursToolStripMenuItem2.Size = new System.Drawing.Size(131, 22);
+            this.resursToolStripMenuItem2.Text = "Resurs";
+            this.resursToolStripMenuItem2.Click += new System.EventHandler(this.resursToolStripMenuItem2_Click);
+            // 
+            // tipResursaToolStripMenuItem2
+            // 
+            this.tipResursaToolStripMenuItem2.Name = "tipResursaToolStripMenuItem2";
+            this.tipResursaToolStripMenuItem2.Size = new System.Drawing.Size(131, 22);
+            this.tipResursaToolStripMenuItem2.Text = "Tip resursa";
+            this.tipResursaToolStripMenuItem2.Click += new System.EventHandler(this.tipResursaToolStripMenuItem2_Click);
+            // 
+            // etiketaToolStripMenuItem2
+            // 
+            this.etiketaToolStripMenuItem2.Name = "etiketaToolStripMenuItem2";
+            this.etiketaToolStripMenuItem2.Size = new System.Drawing.Size(131, 22);
+            this.etiketaToolStripMenuItem2.Text = "Etiketa";
+            this.etiketaToolStripMenuItem2.Click += new System.EventHandler(this.etiketaToolStripMenuItem2_Click);
+            // 
+            // brisanjeToolStripMenuItem
+            // 
+            this.brisanjeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.resursToolStripMenuItem3,
+            this.tipResursaToolStripMenuItem3,
+            this.etiketaToolStripMenuItem3});
+            this.brisanjeToolStripMenuItem.Name = "brisanjeToolStripMenuItem";
+            this.brisanjeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.brisanjeToolStripMenuItem.Text = "Brisanje";
+            // 
             // stablo
             // 
             this.stablo.ImageIndex = 0;
             this.stablo.ImageList = this.imageList1;
             this.stablo.Location = new System.Drawing.Point(0, 27);
             this.stablo.Name = "stablo";
-            treeNode1.Name = "resursi";
-            treeNode1.Text = "Resursi";
+            treeNode2.Name = "resursi";
+            treeNode2.Text = "Resursi";
             this.stablo.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1});
+            treeNode2});
             this.stablo.SelectedImageIndex = 0;
             this.stablo.Size = new System.Drawing.Size(121, 609);
             this.stablo.TabIndex = 1;
@@ -178,6 +274,27 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // resursToolStripMenuItem3
+            // 
+            this.resursToolStripMenuItem3.Name = "resursToolStripMenuItem3";
+            this.resursToolStripMenuItem3.Size = new System.Drawing.Size(152, 22);
+            this.resursToolStripMenuItem3.Text = "Resurs";
+            this.resursToolStripMenuItem3.Click += new System.EventHandler(this.resursToolStripMenuItem3_Click);
+            // 
+            // tipResursaToolStripMenuItem3
+            // 
+            this.tipResursaToolStripMenuItem3.Name = "tipResursaToolStripMenuItem3";
+            this.tipResursaToolStripMenuItem3.Size = new System.Drawing.Size(152, 22);
+            this.tipResursaToolStripMenuItem3.Text = "Tip resursa";
+            this.tipResursaToolStripMenuItem3.Click += new System.EventHandler(this.tipResursaToolStripMenuItem3_Click);
+            // 
+            // etiketaToolStripMenuItem3
+            // 
+            this.etiketaToolStripMenuItem3.Name = "etiketaToolStripMenuItem3";
+            this.etiketaToolStripMenuItem3.Size = new System.Drawing.Size(152, 22);
+            this.etiketaToolStripMenuItem3.Text = "Etiketa";
+            this.etiketaToolStripMenuItem3.Click += new System.EventHandler(this.etiketaToolStripMenuItem3_Click);
             // 
             // Form1
             // 
@@ -217,6 +334,19 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ToolStripMenuItem tmpToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ToolStripMenuItem tutorijalToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dodajToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem izmenaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem brisanjeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem resursToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem tipResursaToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem etiketaToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem resursToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem tipResursaToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem etiketaToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem resursToolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem tipResursaToolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem etiketaToolStripMenuItem3;
 
     }
 }

@@ -16,3 +16,10 @@ C:\Users\Owner\Desktop\hci\HCI_FINAL\obj\x86\Debug\GenerateResource.read.1.tlog
 C:\Users\Owner\Desktop\hci\HCI_FINAL\obj\x86\Debug\GenerateResource.write.1.tlog
 C:\Users\Owner\Desktop\hci\HCI_FINAL\obj\x86\Debug\HCI_FINAL.exe
 C:\Users\Owner\Desktop\hci\HCI_FINAL\obj\x86\Debug\HCI_FINAL.pdb
+C:\Users\Owner\Desktop\hci\HCI_FINAL\obj\x86\Debug\HCI_FINAL.Tutorijal.resources
+C:\Users\Owner\Desktop\hci\HCI_FINAL\obj\x86\Debug\HCI_FINAL.TutorijalEtiketa.resources
+C:\Users\Owner\Desktop\hci\HCI_FINAL\obj\x86\Debug\HCI_FINAL.TutorijalTip.resources
+C:\Users\Owner\Desktop\hci\HCI_FINAL\obj\x86\Debug\HCI_FINAL.TutorijalResurs.resources
+C:\Users\Owner\Desktop\hci\HCI_FINAL\obj\x86\Debug\HCI_FINAL.TutorijalTabelaResurs.resources
+C:\Users\Owner\Desktop\hci\HCI_FINAL\obj\x86\Debug\HCI_FINAL.TutorijalTabelaTip.resources
+C:\Users\Owner\Desktop\hci\HCI_FINAL\obj\x86\Debug\HCI_FINAL.TutorijalTabelaEtiketa.resources

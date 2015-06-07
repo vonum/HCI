@@ -259,7 +259,6 @@ namespace HCI_FINAL
                         break;
                     }
                 }
-
             }
 
             foreach (TreeNode node in stablo.Nodes[0].Nodes)
@@ -267,6 +266,8 @@ namespace HCI_FINAL
                 if (((PictureBox)sender).Name.Equals(node.Text))
                     stablo.SelectedNode = node;
             }
+
+            stablo.SelectedImageIndex = stablo.SelectedNode.ImageIndex;
 
         }
 
@@ -479,6 +480,62 @@ namespace HCI_FINAL
             bin.Serialize(stream, ikonice);
             stream.Close();
         }
+
+        private void resursToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Tutorijal t = new Tutorijal(1);
+            t.Show();
+        }
+
+        private void tipResursaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Tutorijal t = new Tutorijal(2);
+            t.Show();
+        }
+
+        private void etiketaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Tutorijal t = new Tutorijal(3);
+            t.Show();
+        }
+
+        private void resursToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            Tutorijal t = new Tutorijal(4);
+            t.Show();
+        }
+
+        private void tipResursaToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            Tutorijal t = new Tutorijal(5);
+            t.Show();
+        }
+
+        private void etiketaToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            Tutorijal t = new Tutorijal(6);
+            t.Show();
+        }
+
+        private void resursToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            Tutorijal t = new Tutorijal(7);
+            t.Show();
+        }
+
+        private void tipResursaToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            Tutorijal t = new Tutorijal(8);
+            t.Show();
+        }
+
+        private void etiketaToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            Tutorijal t = new Tutorijal(9);
+            t.Show();
+        }
+
+
 
     }
 }
