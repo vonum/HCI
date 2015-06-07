@@ -124,6 +124,24 @@
     <Compile Include="TutorijalEtiketa.Designer.cs">
       <DependentUpon>TutorijalEtiketa.cs</DependentUpon>
     </Compile>
+    <Compile Include="TutorijalIzmenaEtiketa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TutorijalIzmenaEtiketa.Designer.cs">
+      <DependentUpon>TutorijalIzmenaEtiketa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TutorijalIzmenaResurs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TutorijalIzmenaResurs.Designer.cs">
+      <DependentUpon>TutorijalIzmenaResurs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TutorijalIzmenaTip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TutorijalIzmenaTip.Designer.cs">
+      <DependentUpon>TutorijalIzmenaTip.cs</DependentUpon>
+    </Compile>
     <Compile Include="TutorijalTabelaEtiketa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -199,6 +217,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TutorijalEtiketa.resx">
       <DependentUpon>TutorijalEtiketa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TutorijalIzmenaEtiketa.resx">
+      <DependentUpon>TutorijalIzmenaEtiketa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TutorijalIzmenaResurs.resx">
+      <DependentUpon>TutorijalIzmenaResurs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TutorijalIzmenaTip.resx">
+      <DependentUpon>TutorijalIzmenaTip.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TutorijalTabelaEtiketa.resx">
       <DependentUpon>TutorijalTabelaEtiketa.cs</DependentUpon>

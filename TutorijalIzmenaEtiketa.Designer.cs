@@ -1,6 +1,6 @@
 ﻿namespace HCI_FINAL
 {
-    partial class TutorijalEtiketa
+    partial class TutorijalIzmenaEtiketa
     {
         /// <summary>
         /// Required designer variable.
@@ -49,7 +49,7 @@
             this.groupBox1.Location = new System.Drawing.Point(12, 162);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(260, 54);
-            this.groupBox1.TabIndex = 3;
+            this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             // 
             // button2
@@ -59,7 +59,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(73, 21);
             this.button2.TabIndex = 1;
-            this.button2.Text = "Dodaj";
+            this.button2.Text = "Izmeni";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -85,7 +85,7 @@
             this.etiketa_gb.Location = new System.Drawing.Point(12, 12);
             this.etiketa_gb.Name = "etiketa_gb";
             this.etiketa_gb.Size = new System.Drawing.Size(260, 144);
-            this.etiketa_gb.TabIndex = 2;
+            this.etiketa_gb.TabIndex = 4;
             this.etiketa_gb.TabStop = false;
             this.etiketa_gb.Text = "Etiketa";
             // 
@@ -146,16 +146,16 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Oznaka:";
             // 
-            // TutorijalEtiketa
+            // TutorijalIzmenaEtiketa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightPink;
-            this.ClientSize = new System.Drawing.Size(284, 227);
+            this.ClientSize = new System.Drawing.Size(282, 226);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.etiketa_gb);
-            this.Name = "TutorijalEtiketa";
-            this.Text = "TutorijalEtiketa";
+            this.Name = "TutorijalIzmenaEtiketa";
+            this.Text = "TutorijalIzmenaEtiketa";
             this.groupBox1.ResumeLayout(false);
             this.etiketa_gb.ResumeLayout(false);
             this.etiketa_gb.PerformLayout();

@@ -30,5 +30,15 @@ namespace HCI_FINAL
         {
             this.Close();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog od = new OpenFileDialog();
+            od.Filter = "Image Files (*.bmp, *.jpg, *.png)|*.bmp;*.jpg;*.png";
+            od.Title = "Izaberite ikonicu";
+            od.Multiselect = false;
+
+            if (od.ShowDialog() == DialogResult.OK) ;
+        }
     }
 }

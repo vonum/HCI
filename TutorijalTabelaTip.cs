@@ -40,8 +40,8 @@ namespace HCI_FINAL
         {
             if (state == 1 && e.ColumnIndex == 3)
             {
-                this.Close();
-                t.Close();
+                TutorijalIzmenaTip tit = new TutorijalIzmenaTip(t, this);
+                tit.Show();
             }
             else if (state == 2 && e.ColumnIndex == 4)
             {

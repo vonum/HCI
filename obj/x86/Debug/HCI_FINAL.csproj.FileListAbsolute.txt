@@ -23,3 +23,6 @@ C:\Users\Owner\Desktop\hci\HCI_FINAL\obj\x86\Debug\HCI_FINAL.TutorijalResurs.res
 C:\Users\Owner\Desktop\hci\HCI_FINAL\obj\x86\Debug\HCI_FINAL.TutorijalTabelaResurs.resources
 C:\Users\Owner\Desktop\hci\HCI_FINAL\obj\x86\Debug\HCI_FINAL.TutorijalTabelaTip.resources
 C:\Users\Owner\Desktop\hci\HCI_FINAL\obj\x86\Debug\HCI_FINAL.TutorijalTabelaEtiketa.resources
+C:\Users\Owner\Desktop\hci\HCI_FINAL\obj\x86\Debug\HCI_FINAL.TutorijalIzmenaEtiketa.resources
+C:\Users\Owner\Desktop\hci\HCI_FINAL\obj\x86\Debug\HCI_FINAL.TutorijalIzmenaTip.resources
+C:\Users\Owner\Desktop\hci\HCI_FINAL\obj\x86\Debug\HCI_FINAL.TutorijalIzmenaResurs.resources

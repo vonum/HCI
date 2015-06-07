@@ -56,8 +56,8 @@ namespace HCI_FINAL
         {
             if (state == 1 && e.ColumnIndex == 6)
             {
-                this.Close();
-                t.Close();
+                TutorijalIzmenaResurs tir = new TutorijalIzmenaResurs(t, this);
+                tir.Show();
             }
             else if (state == 2 && e.ColumnIndex == 7)
             {

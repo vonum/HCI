@@ -1,6 +1,6 @@
 ﻿namespace HCI_FINAL
 {
-    partial class TutorijalTip
+    partial class TutorijalIzmenaTip
     {
         /// <summary>
         /// Required designer variable.
@@ -51,7 +51,7 @@
             this.groupBox2.Location = new System.Drawing.Point(12, 210);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(324, 68);
-            this.groupBox2.TabIndex = 3;
+            this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             // 
             // button2
@@ -61,7 +61,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(105, 26);
             this.button2.TabIndex = 1;
-            this.button2.Text = "Dodaj";
+            this.button2.Text = "Izmeni";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -89,7 +89,7 @@
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(324, 192);
-            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tip Resursa";
             // 
@@ -168,16 +168,16 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Naziv:";
             // 
-            // TutorijalTip
+            // TutorijalIzmenaTip
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightPink;
-            this.ClientSize = new System.Drawing.Size(350, 291);
+            this.ClientSize = new System.Drawing.Size(351, 297);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Name = "TutorijalTip";
-            this.Text = "TutorijalTip";
+            this.Name = "TutorijalIzmenaTip";
+            this.Text = "TutorijalIzmenaTip";
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

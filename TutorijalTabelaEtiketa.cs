@@ -30,6 +30,7 @@ namespace HCI_FINAL
             et.oznaka = "oznaka";
 
             table.Rows.Add(et.toString());
+            table.Rows[0].Cells[2].Style.BackColor = et.color;
 
             if (state == 1)
                 table.Rows[0].Cells[3].Style.BackColor = Color.Red;
@@ -41,8 +42,8 @@ namespace HCI_FINAL
         {
             if (state == 1 && e.ColumnIndex == 3)
             {
-                this.Close();
-                t.Close();
+                TutorijalIzmenaEtiketa tie = new TutorijalIzmenaEtiketa(t, this);
+                tie.Show();
             }
             else if (state == 2 && e.ColumnIndex == 4)
             {

@@ -9,26 +9,29 @@ using System.Windows.Forms;
 
 namespace HCI_FINAL
 {
-    partial class TutorijalEtiketa : Form
+    partial class TutorijalIzmenaEtiketa : Form
     {
         private Tutorijal t;
+        private TutorijalTabelaEtiketa tt;
 
-        public TutorijalEtiketa(Tutorijal t)
+        public TutorijalIzmenaEtiketa(Tutorijal t, TutorijalTabelaEtiketa tt)
         {
             InitializeComponent();
             this.t = t;
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Uspesno ste dodali novu etiketu");
-            this.Close();
-            t.Close();
+            this.tt = tt;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Uspesno ste izmenili etiketu");
+            this.Close();
+            tt.Close();
+            t.Close();
         }
 
         private void button3_Click(object sender, EventArgs e)

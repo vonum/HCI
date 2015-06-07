@@ -9,35 +9,29 @@ using System.Windows.Forms;
 
 namespace HCI_FINAL
 {
-    partial class TutorijalResurs : Form
+    partial class TutorijalIzmenaTip : Form
     {
-        private Tutorijal t;
+        Tutorijal t;
+        TutorijalTabelaTip tt;
 
-        public TutorijalResurs(Tutorijal t)
+        public TutorijalIzmenaTip(Tutorijal t, TutorijalTabelaTip tt)
         {
             InitializeComponent();
             this.t = t;
-        }
-
-        protected override void OnLoad(EventArgs e)
-        {
-            checkedListBox1.Items.Add("Etiketa 1");
-            checkedListBox1.Items.Add("Etiketa 2");
-
-            tip_cb.Items.Add("Tip 1");
-            tip_cb.Items.Add("Tip 2");
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Uspesno ste dodali resurs");
-            this.Close();
-            t.Close();
+            this.tt = tt;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Uspesno ste izmenili tip resursa");
+            this.Close();
+            t.Close();
+            tt.Close();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -49,5 +43,7 @@ namespace HCI_FINAL
 
             if (od.ShowDialog() == DialogResult.OK) ;
         }
+
+
     }
 }

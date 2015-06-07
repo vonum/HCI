@@ -1,6 +1,6 @@
 ﻿namespace HCI_FINAL
 {
-    partial class TutorijalResurs
+    partial class TutorijalIzmenaResurs
     {
         /// <summary>
         /// Required designer variable.
@@ -66,10 +66,10 @@
             // 
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 276);
+            this.groupBox1.Location = new System.Drawing.Point(12, 272);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(557, 63);
-            this.groupBox1.TabIndex = 12;
+            this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             // 
             // button2
@@ -79,7 +79,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(106, 30);
             this.button2.TabIndex = 8;
-            this.button2.Text = "Dodaj";
+            this.button2.Text = "Izmeni";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -111,8 +111,8 @@
             this.dpodaci_gb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dpodaci_gb.Location = new System.Drawing.Point(285, 12);
             this.dpodaci_gb.Name = "dpodaci_gb";
-            this.dpodaci_gb.Size = new System.Drawing.Size(284, 258);
-            this.dpodaci_gb.TabIndex = 11;
+            this.dpodaci_gb.Size = new System.Drawing.Size(284, 254);
+            this.dpodaci_gb.TabIndex = 14;
             this.dpodaci_gb.TabStop = false;
             this.dpodaci_gb.Text = "Dodatni Podaci";
             // 
@@ -269,8 +269,8 @@
             this.opodaci_gb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.opodaci_gb.Location = new System.Drawing.Point(12, 12);
             this.opodaci_gb.Name = "opodaci_gb";
-            this.opodaci_gb.Size = new System.Drawing.Size(267, 258);
-            this.opodaci_gb.TabIndex = 10;
+            this.opodaci_gb.Size = new System.Drawing.Size(267, 254);
+            this.opodaci_gb.TabIndex = 13;
             this.opodaci_gb.TabStop = false;
             this.opodaci_gb.Text = "Osnovni Podaci";
             // 
@@ -278,9 +278,9 @@
             // 
             this.checkedListBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(110, 167);
+            this.checkedListBox1.Location = new System.Drawing.Point(116, 167);
             this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(120, 69);
+            this.checkedListBox1.Size = new System.Drawing.Size(114, 69);
             this.checkedListBox1.TabIndex = 13;
             // 
             // label12
@@ -389,17 +389,17 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Naziv:";
             // 
-            // TutorijalResurs
+            // TutorijalIzmenaResurs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightPink;
-            this.ClientSize = new System.Drawing.Size(582, 352);
+            this.ClientSize = new System.Drawing.Size(583, 350);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dpodaci_gb);
             this.Controls.Add(this.opodaci_gb);
-            this.Name = "TutorijalResurs";
-            this.Text = "TutorijalResurs";
+            this.Name = "TutorijalIzmenaResurs";
+            this.Text = "TutorijalIzmenaResurs";
             this.groupBox1.ResumeLayout(false);
             this.dpodaci_gb.ResumeLayout(false);
             this.dpodaci_gb.PerformLayout();
