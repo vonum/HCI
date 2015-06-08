@@ -22,6 +22,11 @@ namespace HCI_FINAL
         private System.Text.RegularExpressions.Regex num_rx;
         private bool valid;
         private String name;
+        private List<TR> tipovi_2;
+        private Resurs resurs_2;
+        private Tabela tabela;
+        private List<Et> etikete_2;
+        private Form1 form1;
 
         public Izmena(List<TR> tipovi, Rsc resurs, Tabela table, List<Et> etikete, Form1 form)
         {
@@ -36,6 +41,16 @@ namespace HCI_FINAL
             this.etikete = etikete;
             this.form = form;
             this.name = resurs.naziv;
+        }
+
+        public Izmena(List<TR> tipovi_2, Resurs resurs_2, Tabela tabela, List<Et> etikete_2, Form1 form1)
+        {
+            // TODO: Complete member initialization
+            this.tipovi_2 = tipovi_2;
+            this.resurs_2 = resurs_2;
+            this.tabela = tabela;
+            this.etikete_2 = etikete_2;
+            this.form1 = form1;
         }
 
         protected override void OnLoad(EventArgs e)                             //ucitavanje tabele**********/

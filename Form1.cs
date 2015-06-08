@@ -135,6 +135,7 @@ namespace HCI_FINAL
             foreach (SerIkonica ikonica in ikonice)                             //izmeniti ovaj deo
             {
                 PictureBox p = new PictureBox();
+                p.ContextMenuStrip = contextMenuStrip1;
                 p.Image = ikonica.ikonica;
                 p.Location = ikonica.lokacija;
                 p.Size = new Size(30, 30);
@@ -220,6 +221,7 @@ namespace HCI_FINAL
                     }
                 }
 
+                p.ContextMenuStrip = contextMenuStrip1;
                 p.MouseClick += new MouseEventHandler(selectImage);
                 p.DoubleClick += new EventHandler(editFromMap);
                 p.MouseHover += new EventHandler(hover);
@@ -597,6 +599,29 @@ namespace HCI_FINAL
                 reloadForm();
                 reloadMap();
             }
+            else if (sourceControl.GetType() == typeof(PictureBox))
+            {
+                Rsc resurs = null;
+                PictureBox tmp = (PictureBox)sourceControl;
+                foreach (Rsc r in resursi)
+                {
+                    if (r.naziv.Equals(tmp.Name))
+                    {
+                        resurs = r;
+                        break;
+                    }
+                }
+
+                if (resurs != null)
+                {
+                    Izmena i = new Izmena(tipovi, resurs, new Tabela(resursi, tipovi, this), etikete, this);
+                    i.Show();
+                }
+
+                reloadForm();
+                reloadMap();
+
+            }
 
         }
 
@@ -661,6 +686,14 @@ namespace HCI_FINAL
                     reloadMap();
                 }
             }
+            else if (sourceControl.GetType() == typeof(PictureBox))
+            {
+                PictureBox rm = (PictureBox)sourceControl;
+                int idx = panel1.Controls.IndexOf(rm);
+                ikonice.RemoveAt(idx - 1);                      //zbog slike kantice, index picturebox-a je jednak indexu u listi za serijalizaciju + 1
+                panel1.Controls.Remove(rm);
+            }
+
         }
 
 
