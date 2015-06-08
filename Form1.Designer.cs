@@ -55,11 +55,15 @@
             this.etiketaToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stablo = new System.Windows.Forms.TreeView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.izmeni = new System.Windows.Forms.ToolStripMenuItem();
+            this.obrisi = new System.Windows.Forms.ToolStripMenuItem();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.menuStrip1.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -261,6 +265,7 @@
             // 
             // stablo
             // 
+            this.stablo.ContextMenuStrip = this.contextMenuStrip1;
             this.stablo.ImageIndex = 0;
             this.stablo.ImageList = this.imageList1;
             this.stablo.Location = new System.Drawing.Point(0, 27);
@@ -275,6 +280,28 @@
             this.stablo.MouseClick += new System.Windows.Forms.MouseEventHandler(this.stablo_MouseClick);
             this.stablo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.stablo_MouseDown);
             this.stablo.MouseMove += new System.Windows.Forms.MouseEventHandler(this.stablo_MouseMove);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.izmeni,
+            this.obrisi});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(110, 48);
+            // 
+            // izmeni
+            // 
+            this.izmeni.Name = "izmeni";
+            this.izmeni.Size = new System.Drawing.Size(109, 22);
+            this.izmeni.Text = "Izmeni";
+            this.izmeni.Click += new System.EventHandler(this.izmeni_Click);
+            // 
+            // obrisi
+            // 
+            this.obrisi.Name = "obrisi";
+            this.obrisi.Size = new System.Drawing.Size(109, 22);
+            this.obrisi.Text = "Obrisi";
+            this.obrisi.Click += new System.EventHandler(this.obrisi_Click);
             // 
             // imageList1
             // 
@@ -320,11 +347,13 @@
             this.Controls.Add(this.stablo);
             this.Controls.Add(this.menuStrip1);
             this.Name = "Form1";
+            this.helpProvider1.SetShowHelp(this, true);
             this.Text = "Form1";
             this.Activated += new System.EventHandler(this.Form1_Activated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -362,6 +391,9 @@
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.HelpProvider helpProvider1;
         public System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem izmeni;
+        private System.Windows.Forms.ToolStripMenuItem obrisi;
 
     }
 }

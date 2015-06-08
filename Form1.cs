@@ -401,25 +401,40 @@ namespace HCI_FINAL
 
         private void stablo_MouseClick(object sender, MouseEventArgs e)            
         {
-           TreeNode sel = stablo.GetNodeAt(e.Location);
-           if (sel != null)
-           {
-               stablo.SelectedNode = sel;
-               foreach (PictureBox pb in panel1.Controls)
-               {
-                   if (pb.Name.Equals(sel.Text))
-                   {
-                       pb.BorderStyle = BorderStyle.Fixed3D;
-                   }
-                   else
-                   {
-                       pb.BorderStyle = BorderStyle.None;
-                   }
-               }
 
-               stablo.SelectedImageIndex = stablo.SelectedNode.ImageIndex;
+            if (e.Button == MouseButtons.Left)
+            {
+                TreeNode sel = stablo.GetNodeAt(e.Location);
+                if (sel != null)
+                {
+                    stablo.SelectedNode = sel;
+                    foreach (PictureBox pb in panel1.Controls)
+                    {
+                        if (pb.Name.Equals(sel.Text))
+                        {
+                            pb.BorderStyle = BorderStyle.Fixed3D;
+                        }
+                        else
+                        {
+                            pb.BorderStyle = BorderStyle.None;
+                        }
+                    }
 
-           }
+                    stablo.SelectedImageIndex = stablo.SelectedNode.ImageIndex;
+
+                }
+            }
+            else
+            {
+                TreeNode sel = stablo.GetNodeAt(e.Location);
+                stablo.SelectedNode = sel;
+                stablo.SelectedImageIndex = stablo.SelectedNode.ImageIndex;
+
+                if (sel != null)
+                {
+                    contextMenuStrip1.Show();
+                }
+            }
         }
 
         public void reloadForm()
@@ -438,9 +453,8 @@ namespace HCI_FINAL
 
         }
 
-        private void Form1_Activated(object sender, EventArgs e)
+        public void reloadMap()
         {
-            reloadForm();
             foreach (Rsc r in resursi)
             {
                 foreach (SerIkonica i in ikonice)
@@ -457,8 +471,13 @@ namespace HCI_FINAL
                         pb.Image = r.ikonica;
                     }
                 }
-
             }
+        }
+
+        private void Form1_Activated(object sender, EventArgs e)
+        {
+            reloadForm();
+            reloadMap();
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)                   //autosave
@@ -538,6 +557,110 @@ namespace HCI_FINAL
         private void helpToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Help.ShowHelp(this, "HelpPls.chm");
+        }
+
+        private void izmeni_Click(object sender, EventArgs e)
+        {
+            Control sourceControl = null;
+
+            ToolStripItem menuItem = sender as ToolStripItem;
+            if (menuItem != null)
+            {
+                // Retrieve the ContextMenuStrip that owns this ToolStripItem
+                ContextMenuStrip owner = menuItem.Owner as ContextMenuStrip;
+                if (owner != null)
+                {
+                    // Get the control that is displaying this context menu
+                    sourceControl = owner.SourceControl;
+                }
+            }
+
+            if (sourceControl.GetType() == typeof(TreeView))
+            {
+                TreeNode tmp = ((TreeView)sourceControl).SelectedNode;
+                Rsc resurs = null;
+                if(tmp != null)
+                foreach (Rsc r in resursi)
+                {
+                    if (r.naziv.Equals(tmp.Text))
+                    {
+                        resurs = r;
+                        break;
+                    }
+                }
+                if(resurs != null)
+                {
+                    Izmena i = new Izmena(tipovi, resurs, new Tabela(resursi, tipovi, this), etikete, this);
+                    i.Show();
+                }
+
+                reloadForm();
+                reloadMap();
+            }
+
+        }
+
+        private void obrisi_Click(object sender, EventArgs e)
+        {
+            Control sourceControl = null;
+
+            ToolStripItem menuItem = sender as ToolStripItem;
+            if (menuItem != null)
+            {
+                // Retrieve the ContextMenuStrip that owns this ToolStripItem
+                ContextMenuStrip owner = menuItem.Owner as ContextMenuStrip;
+                if (owner != null)
+                {
+                    // Get the control that is displaying this context menu
+                    sourceControl = owner.SourceControl;
+                }
+            }
+
+            if (sourceControl.GetType() == typeof(TreeView))
+            {
+                TreeNode tmp = ((TreeView)sourceControl).SelectedNode;
+                Rsc resurs = null;
+
+                if (tmp != null)
+                {
+                    foreach (Rsc r in resursi)
+                    {
+                        if (r.naziv.Equals(tmp.Text))
+                        {
+                            resurs = r;
+                            break;
+                        }
+                    }
+
+                    List<PictureBox> pbs = new List<PictureBox>();
+
+                    foreach (PictureBox pb in panel1.Controls)
+                    {
+                        if (pb.Name.Equals(resurs.naziv))
+                        {
+                            pbs.Add(pb);
+                        }
+                    }
+
+                    for (int i = pbs.Count - 1; i >= 0; i--)
+                    {
+                        panel1.Controls.Remove(pbs.ElementAt(i));
+                    }
+
+                    for (int i = ikonice.Count - 1; i >= 0; i--)
+                    {
+                        if (ikonice.ElementAt(i).naziv.Equals(resurs.naziv))
+                        {
+                            ikonice.RemoveAt(i);
+                        }
+                    }
+
+                    resursi.Remove(resurs);
+
+                    reloadForm();
+                    reloadMap();
+                }
+            }
         }
 
 

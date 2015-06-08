@@ -33,6 +33,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.opodaci_gb = new System.Windows.Forms.GroupBox();
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.label12 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.tip_cb = new System.Windows.Forms.ComboBox();
@@ -58,7 +59,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rep = new System.Windows.Forms.ErrorProvider(this.components);
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.opodaci_gb.SuspendLayout();
             this.dpodaci_gb.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -116,6 +117,15 @@
             this.opodaci_gb.TabIndex = 5;
             this.opodaci_gb.TabStop = false;
             this.opodaci_gb.Text = "Osnovni Podaci";
+            // 
+            // checkedListBox1
+            // 
+            this.checkedListBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.Location = new System.Drawing.Point(110, 167);
+            this.checkedListBox1.Name = "checkedListBox1";
+            this.checkedListBox1.Size = new System.Drawing.Size(120, 69);
+            this.checkedListBox1.TabIndex = 13;
             // 
             // label12
             // 
@@ -396,14 +406,9 @@
             // 
             this.rep.ContainerControl = this;
             // 
-            // checkedListBox1
+            // helpProvider1
             // 
-            this.checkedListBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(110, 167);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(120, 76);
-            this.checkedListBox1.TabIndex = 13;
+            this.helpProvider1.HelpNamespace = "C:\\Users\\Owner\\Desktop\\hci\\HCI_FINAL\\bin\\Debug\\HelpPls.chm";
             // 
             // Resurs
             // 
@@ -414,7 +419,10 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dpodaci_gb);
             this.Controls.Add(this.opodaci_gb);
+            this.helpProvider1.SetHelpKeyword(this, "Dodavanje resursa");
+            this.helpProvider1.SetHelpNavigator(this, System.Windows.Forms.HelpNavigator.KeywordIndex);
             this.Name = "Resurs";
+            this.helpProvider1.SetShowHelp(this, true);
             this.Text = "Resurs";
             this.opodaci_gb.ResumeLayout(false);
             this.opodaci_gb.PerformLayout();
@@ -458,5 +466,6 @@
         private System.Windows.Forms.TextBox cena_tb;
         private System.Windows.Forms.ErrorProvider rep;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

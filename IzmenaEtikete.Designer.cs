@@ -40,6 +40,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.ep = new System.Windows.Forms.ErrorProvider(this.components);
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.groupBox1.SuspendLayout();
             this.etiketa_gb.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ep)).BeginInit();
@@ -154,6 +155,10 @@
             // 
             this.ep.ContainerControl = this;
             // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "C:\\Users\\Owner\\Desktop\\hci\\HCI_FINAL\\bin\\Debug\\HelpPls.chm";
+            // 
             // IzmenaEtikete
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -162,7 +167,10 @@
             this.ClientSize = new System.Drawing.Size(284, 230);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.etiketa_gb);
+            this.helpProvider1.SetHelpKeyword(this, "Izmena etikete");
+            this.helpProvider1.SetHelpNavigator(this, System.Windows.Forms.HelpNavigator.KeywordIndex);
             this.Name = "IzmenaEtikete";
+            this.helpProvider1.SetShowHelp(this, true);
             this.Text = "IzmenaEtikete";
             this.groupBox1.ResumeLayout(false);
             this.etiketa_gb.ResumeLayout(false);
@@ -185,5 +193,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ErrorProvider ep;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

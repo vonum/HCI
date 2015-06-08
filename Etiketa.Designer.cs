@@ -40,6 +40,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.eep = new System.Windows.Forms.ErrorProvider(this.components);
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.etiketa_gb.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.eep)).BeginInit();
@@ -154,6 +155,10 @@
             // 
             this.eep.ContainerControl = this;
             // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "C:\\Users\\Owner\\Desktop\\hci\\HCI_FINAL\\bin\\Debug\\HelpPls.chm";
+            // 
             // Etiketa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -162,7 +167,10 @@
             this.ClientSize = new System.Drawing.Size(286, 226);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.etiketa_gb);
+            this.helpProvider1.SetHelpKeyword(this, "Dodavanje etikete");
+            this.helpProvider1.SetHelpNavigator(this, System.Windows.Forms.HelpNavigator.KeywordIndex);
             this.Name = "Etiketa";
+            this.helpProvider1.SetShowHelp(this, true);
             this.Text = "Etiketa";
             this.etiketa_gb.ResumeLayout(false);
             this.etiketa_gb.PerformLayout();
@@ -185,5 +193,6 @@
         private System.Windows.Forms.TextBox opis_tb;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ErrorProvider eep;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

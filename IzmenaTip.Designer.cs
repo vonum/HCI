@@ -42,6 +42,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.ep = new System.Windows.Forms.ErrorProvider(this.components);
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ep)).BeginInit();
@@ -177,6 +178,10 @@
             // 
             this.ep.ContainerControl = this;
             // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "C:\\Users\\Owner\\Desktop\\hci\\HCI_FINAL\\bin\\Debug\\HelpPls.chm";
+            // 
             // IzmenaTip
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -185,7 +190,10 @@
             this.ClientSize = new System.Drawing.Size(351, 295);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.helpProvider1.SetHelpKeyword(this, "Izmena tipa resursa");
+            this.helpProvider1.SetHelpNavigator(this, System.Windows.Forms.HelpNavigator.KeywordIndex);
             this.Name = "IzmenaTip";
+            this.helpProvider1.SetShowHelp(this, true);
             this.Text = "IzmenaTip";
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
@@ -210,5 +218,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ErrorProvider ep;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

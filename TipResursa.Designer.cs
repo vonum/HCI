@@ -42,6 +42,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.trep = new System.Windows.Forms.ErrorProvider(this.components);
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trep)).BeginInit();
@@ -177,6 +178,10 @@
             // 
             this.trep.ContainerControl = this;
             // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "C:\\Users\\Owner\\Desktop\\hci\\HCI_FINAL\\bin\\Debug\\HelpPls.chm";
+            // 
             // TipResursa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -185,7 +190,10 @@
             this.ClientSize = new System.Drawing.Size(348, 289);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.helpProvider1.SetHelpKeyword(this, "Dodavanje tipa resursa");
+            this.helpProvider1.SetHelpNavigator(this, System.Windows.Forms.HelpNavigator.KeywordIndex);
             this.Name = "TipResursa";
+            this.helpProvider1.SetShowHelp(this, true);
             this.Text = "TipResursa";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -210,5 +218,6 @@
         private System.Windows.Forms.TextBox naziv_tb;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ErrorProvider trep;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

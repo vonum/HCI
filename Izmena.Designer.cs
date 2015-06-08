@@ -59,6 +59,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.ep = new System.Windows.Forms.ErrorProvider(this.components);
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.groupBox1.SuspendLayout();
             this.dpodaci_gb.SuspendLayout();
             this.opodaci_gb.SuspendLayout();
@@ -405,6 +406,10 @@
             // 
             this.ep.ContainerControl = this;
             // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "C:\\Users\\Owner\\Desktop\\hci\\HCI_FINAL\\bin\\Debug\\HelpPls.chm";
+            // 
             // Izmena
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -414,7 +419,10 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dpodaci_gb);
             this.Controls.Add(this.opodaci_gb);
+            this.helpProvider1.SetHelpKeyword(this, "Izmena resursa");
+            this.helpProvider1.SetHelpNavigator(this, System.Windows.Forms.HelpNavigator.KeywordIndex);
             this.Name = "Izmena";
+            this.helpProvider1.SetShowHelp(this, true);
             this.Text = "Izmena";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Izmena_FormClosing);
             this.groupBox1.ResumeLayout(false);
@@ -459,5 +467,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ErrorProvider ep;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }
